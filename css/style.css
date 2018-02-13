@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body#index {
+    background-color: black;
+    color: white;
+}
+
+body#index > img#logo {
+    width: 200px;
+    height: auto;
+    display: block;
+    text-align: center;
+    margin: 2em auto;
+}
+
+body#index > h1 {
+    font-size: 3em;
+    margin: 1em;
+    text-align: center;
+}
+
+body#index > h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 1em;
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body#index > h3 {
+    font-size: 1em;
+    text-align: center;
+    margin: 2em;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
