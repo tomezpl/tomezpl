@@ -5,27 +5,37 @@ body {
 }
 
 body#index {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 body#index > img#logo {
     width: 200px;
     height: auto;
     display: block;
-    text-align: center;
     margin: 2em auto;
+    background-color: black;
+    border-radius: 100%;
+    box-shadow: 0px 0px 15px grey;
+}
+body#index > hr {
+  animation-name: extend;
+  animation-duration: 3s;
+}
+
+@keyframes extend {
+    0% { width: 0; }
+    33% { width: 0; }
+    100% { width: 100%; }
 }
 
 body#index > h1 {
     font-size: 3em;
     margin: 1em;
-    text-align: center;
 }
 
 body#index > h2 {
     font-size: 2em;
-    text-align: center;
     margin: 1em;
 }
 
@@ -37,8 +47,26 @@ body#index > h2 {
 
 body#index > h3 {
     font-size: 1em;
-    text-align: center;
     margin: 2em;
     animation-name: fadein;
     animation-duration: 2s;
+}
+
+body#index {
+  text-align: center;
+}
+
+a.btn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid grey;
+  border-radius: 0.75em;
+  padding: 0.66em;
+  transition: 0.25s ease box-shadow;
+}
+
+a.btn:hover {
+  box-shadow: 0px 0px 20px lightgrey;
 }
