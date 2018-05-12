@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-	background: #FEFEFE;
+	background: #F8F8F8;
 }
 
 body#index {
@@ -100,6 +100,28 @@ body#blog > header > nav > a {
 	margin: auto 0.25em;
 }
 
-body#blog > main > article {
-	padding: 2em;
+body#blog > main > article, body#blog > main > aside {
+	padding: 1em 1em;
+	background: white;
+	border: 1px solid lightgrey;
+	margin: 1em 4em;
+	margin-right: 0;
+	width: 66%;
+	float: left;
+	min-height: 5em;
+}
+
+body#blog > main > aside {
+	float: right;
+	width: 15%;
+	margin-left: 0;
+	margin-right: 4em;
+}
+
+body#blog > main > article h1 {
+	font-size: 2em;
+}
+
+body#blog > main > article h2 {
+	font-size: 1.25em;
 }
