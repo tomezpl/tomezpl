@@ -109,6 +109,7 @@ body#blog > main > article, body#blog > main > aside {
 	width: 66%;
 	float: left;
 	min-height: 5em;
+	border-radius: 0.5em;
 }
 
 body#blog > main > aside {
