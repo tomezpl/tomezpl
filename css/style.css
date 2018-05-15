@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
 	background: #F8F8F8;
+	min-height: 100vh;
+	position: relative;
 }
 
 body#index {
-    background-color: white;
     color: black;
 }
 
@@ -100,19 +101,25 @@ body#blog > header > nav > a {
 	margin: auto 0.25em;
 }
 
-body#blog > main > article, body#blog > main > aside {
+body#blog > main {
+	display: inline-block;
+	width: 66%;
+	margin-bottom: 5em;
+}
+
+body#blog > main > article, body#blog > aside {
 	padding: 1em 1em;
 	background: white;
 	border: 1px solid lightgrey;
 	margin: 1em 4em;
 	margin-right: 0;
-	width: 66%;
+	width: 100%;
 	float: left;
 	min-height: 5em;
 	border-radius: 0.5em;
 }
 
-body#blog > main > aside {
+body#blog > aside {
 	float: right;
 	width: 15%;
 	margin-left: 0;
@@ -125,4 +132,20 @@ body#blog > main > article h1 {
 
 body#blog > main > article h2 {
 	font-size: 1.25em;
+}
+
+body#blog > footer {
+	background-color: rgba(64, 64, 64, 0.875);
+	min-height: 4em;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	box-shadow: 0px 0px 15px black;
+	color: white;
+	text-shadow: 0px 0px 10px black;
+	text-align: center;
+}
+
+body#blog > footer p {
+	font-size: 0.875em;
 }
