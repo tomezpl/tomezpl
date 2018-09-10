@@ -13,11 +13,15 @@ function loadBlogposts()
 function updateBlogposts(ev)
 {
 	var blogposts = JSON.parse(ev.target.response);
+	var postContainer = document.getElementsByTagName("main")[0];
 	for(var i = 0; i < blogposts.length; i++)
 	{
 		var str = "<article id=\"article-" + blogposts[i].id + "-" + blogposts[i].name + "\">";
 		str += "\n";
 		str += "<h1>" + blogposts[i].header + "</h1>";
-		console.log(str);
+		str += "<h2>" + blogposts[i].subheader + "</h2>";
+		str += blogposts[i].content;
+		str += "</article>";
+		postContainer.innerHTML += str;
 	}
 }
