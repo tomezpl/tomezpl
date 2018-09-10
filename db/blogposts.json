@@ -1,0 +1,16 @@
+[
+	{
+		"id": 0,
+		"name": "hello-world",
+		"header": "Hello, world!",
+		"subheader": "Yet another heading.",
+		"content": "<p>This is a paragraph.</p>"
+	},
+	{
+		"id": 1,
+		"name": "test-article",
+		"header": "Another article",
+		"subheader": "",
+		"content": "<p>This article was made to test whether the init script works fine.</p><p>Hopefully, newlines shouldn't break the data.</p>"
+	}
+]
