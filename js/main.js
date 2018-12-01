@@ -1,6 +1,4 @@
-addEventListener("load", function() {
-	loadBlogposts();
-});
+
 
 function loadBlogposts()
 {
@@ -17,6 +15,8 @@ function updateBlogposts(ev)
 	for(var i = 0; i < blogposts.length; i++)
 	{
 		var str = "<article id=\"article-" + blogposts[i].id + "-" + blogposts[i].name + "\">";
+		str += "\n";
+		str += "<time datetime='" + blogposts[i].date + "'>" + blogposts[i].date + "</time>";
 		str += "\n";
 		str += "<h1>" + blogposts[i].header + "</h1>";
 		str += "<h2>" + blogposts[i].subheader + "</h2>";

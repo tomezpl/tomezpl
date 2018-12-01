@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tomasz Zając - programming &amp; IT in general</title>
+        <title>Tomasz Zając - devblog</title>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="css/simple-grid.css"  type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <script src="js/main.js"></script>
     </head>
-    <body id="index">
-        <img src="assets/logo.png" class="logo">
-        <hr>
-        <h1>Tomasz Zając</h1>
-        <h2>Programming, game development, and pretty much anything to do with computers.</h2>
-        <!--<h3>In case you haven't realised, this website is still under construction.</h3>-->
-		<p>Quick links:</p>
-        <a href="blog.html" class="btn">Blog</a>
-		<a href="http://www.github.com/tomezpl" alt="My GitHub profile"><img alt="My GitHub profile" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="height: 4em; vertical-align: middle"></a>
+    <body>
+		<div class="container-fluid">
+			<header class="row">
+				<div class="col-1 col-12-sm" id="logo-container">
+					<img src="assets/logo.png" class="logo">
+				</div>
+				<div class="col-7" id="site-title-container">
+					<h1>Tomasz Zając</h1>
+					<h2>Programming, game development, and pretty much anything to do with computers.</h2>
+				</div>
+				<nav class="col-4">
+					<a href="index.html">Blog</a>
+					<a href="about.html">About me</a>
+					<a href="showcase.html">Showcase</a>
+				</nav>
+			</header>
+			<div class="row">
+
+			<main class="col-12">
+			</main>
+		</div>
+			<footer>
+				<p>Tomasz Zając &copy; 2018</p>
+			</footer>
+		</div>
     </body>
+	<script>
+	addEventListener("load", function() {
+		loadBlogposts();
+	});
+	</script>
 </html>
