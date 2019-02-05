@@ -12,6 +12,7 @@ function updateBlogposts(ev)
 {
 	var blogposts = JSON.parse(ev.target.response);
 	var postContainer = document.getElementsByTagName("main")[0];
+	blogposts = blogposts.sort(function(a, b) { return b.id - a.id; }); // highest ID first, no matter where placed in DB
 	for(var i = 0; i < blogposts.length; i++)
 	{
 		var str = "<article id=\"article-" + blogposts[i].id + "-" + blogposts[i].name + "\">";
