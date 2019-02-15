@@ -18,7 +18,7 @@
 					<h2>Programming, game development, and pretty much anything to do with computers.</h2>
 				</div>
 				<nav class="col-4">
-					<a href="index.html">Blog</a>
+					<a href="index.php">Blog</a>
 					<a href="about.html">About me</a>
 					<a href="showcase.html">Showcase</a>
 				</nav>
