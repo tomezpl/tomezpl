@@ -184,6 +184,25 @@ article p, article h3 {
 	padding: 0.25em;
 }
 
+article table.full-width {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+article table.split-half td {
+  width: 45vw;
+}
+
+article table td.centered {
+  text-align: center;
+}
+
+article table td.table-header {
+  font-size: 2em;
+}
+
 main p a {
 	color: #00CF58;
 }
