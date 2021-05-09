@@ -1,4 +1,16 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+/* eslint-disable */
 
-createApp(App).mount("#app");
+import { createApp } from 'vue';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
+import MainSite from './MainSite.vue'
+
+createApp(MainSite, {
+    blogDb: [
+        {
+            title: 'Hello world!',
+            content: '<b>My first blogpost.</b>'
+        }
+    ]
+}).mount("#app");
