@@ -1,7 +1,7 @@
 <template>
     <div class="container text-light">
         <Header />
-        <SiteBody :blogDb="blogDb" />
+        <SiteBody />
         <Footer />
     </div>
 </template>
@@ -19,9 +19,6 @@
             Header,
             SiteBody,
             Footer
-        },
-        props: {
-            blogDb: Array
         }
     });
 </script>
