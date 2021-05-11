@@ -9,7 +9,7 @@ body {
     box-shadow: #424242 0px 0px 15px;
 }
 
-.nav {
+.nav, .footer {
     border-right: 5px solid #00CF58;
 }
 
