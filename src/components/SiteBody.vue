@@ -1,10 +1,8 @@
 <template>
-    <div class="row site-body body-headernav-border">
-        <template v-for="(blogPost, index) in sortedBlogPosts" :key="index">
-            <BlogPost :entry="blogPost" />
-            <hr class="blog-post-separator" />
-        </template>
-    </div>
+    <template v-for="(blogPost, index) in sortedBlogPosts" :key="index">
+        <BlogPost :entry="blogPost" />
+        <hr class="blog-post-separator" />
+    </template>
 </template>
 
 <script lang="ts">

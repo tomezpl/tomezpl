@@ -30,7 +30,7 @@ body {
     border-left: 5px solid #00CF58;
 }
 
-.blog-post a, .blog-post a:visited {
+.blog-post a, .blog-post a:visited, a.green-link, a.green-link:visited {
     color: #00CF58;
 }
 
