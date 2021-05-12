@@ -1,5 +1,8 @@
 <template>
-    <h1>Footer</h1>
+    <div class="row mb-3 footer body-headernav-border">
+        <div class="col-xl-10 col-md-8 col-7"></div>
+        <div class="p-1 col-xl-2 col-md-4 col-5 align-middle text-end nav-link active"><span style="font-weight: bold">Tomasz Zajac &copy; 2021</span></div>
+    </div>
 </template>
 
 <script lang="ts">

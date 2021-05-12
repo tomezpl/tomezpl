@@ -9,7 +9,7 @@ body {
     box-shadow: #424242 0px 0px 15px;
 }
 
-.nav {
+.nav, .footer {
     border-right: 5px solid #00CF58;
 }
 
@@ -30,9 +30,17 @@ body {
     border-left: 5px solid #00CF58;
 }
 
+.blog-post a, .blog-post a:visited, a.green-link, a.green-link:visited {
+    color: #00CF58;
+}
+
 .blog-post-separator {
     height: 1em!important;
     width: 98%;
     text-align: center;
     margin: 0.5em auto;
+}
+
+.blog-post:last-of-type + .blog-post-separator {
+    display: none;
 }

@@ -14,17 +14,17 @@
         <div class="col-xl-4 col-12 px-0 align-self-end">
             <ul class="nav justify-content-end text-uppercase fw-bold">
                 <li class="nav-item">
-                    <a class="nav-link active w-100 link-light" aria-current="page" href="index.html">
+                    <a class="nav-link w-100 link-light" v-bind:class="{ active: path === '/'}" :aria-current="path === '/' ? 'page' : ''" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="about.html">
+                    <a class="nav-link link-light" v-bind:class="{ active: path === '/about'}" :aria-current="path === '/about' ? 'page' : ''" href="/about">
                         About me
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="showcase.html">
+                    <a class="nav-link link-light" v-bind:class="{ active: path === '/showcase'}" :aria-current="path === '/showcase' ? 'page' : ''" href="/showcase">
                         Showcase
                     </a>
                 </li>
@@ -37,6 +37,11 @@
     import { defineComponent } from 'vue';
 
     export default defineComponent({
-        name: 'Header'
+        name: 'Header',
+        data() {
+            return {
+                path: window.location.pathname
+            }
+        }
     });
 </script>

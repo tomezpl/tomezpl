@@ -2,7 +2,8 @@
     <div class="container text-light">
         <Header />
         <div class="row site-body body-headernav-border">
-            <SiteBody />
+            <h1>Woops!</h1>
+            <h2>This page doesn't exist. <a href="/" class="green-link">Go home?</a></h2>
         </div>
         <Footer />
     </div>
@@ -11,15 +12,13 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import Header from './components/Header.vue';
-    import SiteBody from './components/SiteBody.vue';
     import Footer from './components/Footer.vue';
     import './css/styles.css';
 
     export default defineComponent({
-        name: 'MainSite',
+        name: 'NotFound',
         components: {
             Header,
-            SiteBody,
             Footer
         }
     });

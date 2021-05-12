@@ -1,63 +1,35 @@
 /* eslint-disable */
 
-interface BlogEntryMeta {
-    id: number;
-    name: string;
-    header: string;
-    subheader: string;
-    date: Date;
-}
-
-interface BlogEntry {
-    meta: BlogEntryMeta;
-    content: string;
-}
-
-import { createApp } from 'vue';
+import { createApp, VNode, h } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
 import MainSite from './MainSite.vue'
+import NotFound from './NotFound.vue'
+import About from './About.vue'
+import Showcase from './Showcase.vue'
 
-let blogDb: Array<BlogEntry> = [];
-
-function populateBlogPosts() {
-    console.log('Fetching blog index...');
-    return fetch(`${window.location.origin}/db/blog/index.json`, {
-        method: 'GET'
-    }).then(response => {
-        console.log('Got index.json. Parsing...');
-        return response.json()
-    }).then(responseJson => {
-        console.log('Parsed index.json');
-        console.log(responseJson);
-
-        const indexArray: Array<string> = responseJson;
-
-        console.log('Iterating through index to populate the array with all blogposts...');
-        indexArray.map((indexEntry) => {
-            fetch(`${window.location.origin}/db/blog/${indexEntry}/meta.json`, {
-                method: 'GET'
-            }).then(response => response.json())
-                .then(responseJson => {
-                    const meta: BlogEntryMeta = responseJson;
-
-                    fetch(`${window.location.origin}/db/blog/${meta.id}-${meta.name}/index.html`, {
-                        method: 'GET'
-                    }).then(response => {
-                        response.text().then(blogPostText => {
-                            blogDb.push({ meta, content: blogPostText });
-                        })
-                    });
-                });
-        });
-    }).catch(() => {
-        blogDb = [];
-    });
-}
-
-populateBlogPosts().finally(() => {
-    createApp(MainSite, {
-        blogDb
-    }).mount("#app");
-});
+createApp({
+    data() {
+        return {
+            currentRoute: `${window.location.pathname}`
+        }
+    },
+    computed: {
+        ViewComponent() {
+            switch (this.currentRoute) {
+                case '/':
+                    return MainSite;
+                case '/about':
+                    return About;
+                case '/showcase':
+                    return Showcase;
+                default:
+                    return NotFound;
+            }
+        }
+    },
+    render(): VNode {
+        return h(this.ViewComponent);
+    }
+}).mount("#app");
