@@ -18,11 +18,12 @@ createApp({
     computed: {
         ViewComponent() {
             switch (this.currentRoute) {
+                case '/index.html':
                 case '/':
                     return MainSite;
-                case '/about':
+                case '/about.html':
                     return About;
-                case '/showcase':
+                case '/showcase.html':
                     return Showcase;
                 default:
                     return NotFound;

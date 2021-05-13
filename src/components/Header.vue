@@ -14,17 +14,17 @@
         <div class="col-xl-4 col-12 px-0 align-self-end">
             <ul class="nav justify-content-end text-uppercase fw-bold">
                 <li class="nav-item">
-                    <a class="nav-link w-100 link-light" v-bind:class="{ active: path === '/'}" :aria-current="path === '/' ? 'page' : ''" href="/">
+                    <a class="nav-link w-100 link-light" v-bind:class="{ active: path === '/' || path === '/index.html'}" :aria-current="path === '/' || path === '/index.html' ? 'page' : ''" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" v-bind:class="{ active: path === '/about'}" :aria-current="path === '/about' ? 'page' : ''" href="/about">
+                    <a class="nav-link link-light" v-bind:class="{ active: path === '/about.html'}" :aria-current="path === '/about.html' ? 'page' : ''" href="/about.html">
                         About me
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" v-bind:class="{ active: path === '/showcase'}" :aria-current="path === '/showcase' ? 'page' : ''" href="/showcase">
+                    <a class="nav-link link-light" v-bind:class="{ active: path === '/showcase.html'}" :aria-current="path === '/showcase.html' ? 'page' : ''" href="/showcase.html">
                         Showcase
                     </a>
                 </li>
