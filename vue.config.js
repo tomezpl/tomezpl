@@ -9,12 +9,30 @@ module.exports = {
             filename: 'index.html',
             // when using title option,
             // template title tag needs to be <title><%= htmlWebpackPlugin.options.title %></title>
-            title: 'Index Page',
+            title: 'Tom Zajac',
             // chunks to include on this page, by default includes
             // extracted common chunks and vendor chunks.
             chunks: ['chunk-vendors', 'chunk-common', 'index']
         },
-        about: 'src/main.ts',
-        showcase: 'src/main.ts'
+        about: {
+            entry: 'src/main.ts',
+            template: 'public/about.html',
+            filename: 'about.html',
+            title: 'Tom Zajac - About',
+
+            // chunks to include on this page, by default includes
+            // extracted common chunks and vendor chunks.
+            chunks: ['chunk-vendors', 'chunk-common', 'index']
+        },
+        showcase: {
+            entry: 'src/main.ts',
+            template: 'public/showcase.html',
+            filename: 'showcase.html',
+            title: 'Tom Zajac - Showcase',
+
+            // chunks to include on this page, by default includes
+            // extracted common chunks and vendor chunks.
+            chunks: ['chunk-vendors', 'chunk-common', 'index']
+        }
     }
 }
