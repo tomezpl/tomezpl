@@ -7,7 +7,9 @@
                 <h2>Brief</h2>
                 <p>
                     If you happen to have stumbled upon this page - welcome!
-                    My name is Tom, I'm currently a Computer Science student at University of Lincoln, UK. That is also my current workplace - I am part of the ICT department's associate developer team.
+                </p>
+                <p>
+                    My name is Tom and I'm a programmer, primarily experienced in Web development, and a hobbyist game developer.
                     Natively I am Polish, but I currently live in Britain.
                 </p>
                 <p>
@@ -15,15 +17,19 @@
                 </p>
                 <h2>Interests</h2>
                 <p>
-                    My interests are... all over the place, really.
-                    Mainly it is game design &amp; development, graphics programming and computer architectures. In addition, at some point in the near future I plan on delving into how video editing software is built - and perhaps have a go at writing my own open-source editor.
+                    My interests are mostly focused around video games and the gaming industry, as well as history, music, languages, animation &amp; filmmaking (having been active in some machinima-style content creation when I was younger).
                 </p>
                 <h2>Skills &amp; qualifications</h2>
                 <h3>Higher Education</h3>
                 <h4>University of Lincoln</h4>
                 <small>2017 - 2020 | Lincoln, Lincolnshire, United Kingdom</small>
                 <p>
-                    Currently working on graduating with a BSc in Computer Science, aiming to achieve a 1st or 2:1 degree.
+                    Graduated with a 1st Class Honours BSc in Computer Science. Subjects included programming, computer architectures, networking,
+                    physics simulation, image processing, team software engineering, maths, algorithms &amp; complexity, problem solving, operating systems, Web authoring and more. 
+                </p>
+                <p>
+                    In my final year, I wrote a dissertation on teaching programming through gamification. The project explored the history of the topic and also proposed <a href="https://github.com/tomezpl/code-gamification">a playable prototype solution</a>.
+                    You can <a href="assets/Teaching Programming by Gamification.pdf">read the full report here</a>.
                 </p>
                 <h3>Further Education</h3>
                 <h4>Lincoln College</h4>
