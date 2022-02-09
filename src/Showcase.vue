@@ -216,7 +216,7 @@
                 },
                 {
                     elId: '',
-                    id: -1,
+                    id: -2,
                     title: 'RoombaRumble',
                     githubLink: '',
                     tags: ['C#', 'Unity3D', 'URP', 'HLSL', 'ShaderGraph', 'MLAPI', 'game systems & gameplay programming', 'physics programming', 'multiplayer programming', 'UI programming', 'game design', 'vfx'],
@@ -370,6 +370,46 @@ half4 frag(Varyings IN) : SV_Target
                         </pre>
                         </div>
                         <div class="col-1 col-md-2"></div>
+                    `
+                },
+                {
+                    elId: '',
+                    id: 4,
+                    title: 'EasyGIF',
+                    tags: ['C', 'C++', 'Linux', 'X', 'image formats', 'UI programming'],
+                    githubLink: 'https://github.com/tomezpl/EasyGIF',
+                    content: `
+                        <p>
+                            EasyGIF was an open-source GIF capture & screenshot app I developed for Linux. As most Linux distributions (at least at the time) use GUI environments based on the
+                            X Windowing System, this meant I needed to use the XCB library (X C Bindings) in order to read display data from the X server.
+                        </p>
+                        <p>
+                            The app allows for the screenshots/GIFs to be saved to a file on disk, or uploaded to Gyazo via their API.
+                        </p>
+                        <p>
+                            While the app itself was very basic, I am proud of this project as it took considerable amounts of research to understand how X operates, what the image format is like,
+                            how to output it to a file, integrate it with a UI, etc. It also properly introduced me to open-source software development and GNU make.
+                        </p>
+                    `
+                },
+                {
+                    elId: '',
+                    id: -1,
+                    title: 'Not-C Compiler',
+                    tags: ['Python', 'x86 assembly', 'custom language compiler', 'nasm'],
+                    githubLink: 'https://github.com/tomezpl/not-c',
+                    content: `
+                        <p>
+                            As part of a university group project, I was responsible for implementing an x86 backend in a compiler for a new programming language.
+                            The compiler itself was implemented using Python, and the language had a C-like syntax.
+                        </p>
+                        <p>
+                            The main components I developed are
+                            <a href="https://github.com/tomezpl/not-c/blob/master/mods/int2str.py" target="_blank"><code>mods/int2str.py</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> &amp; <a href="https://github.com/tomezpl/not-c/blob/master/mods/int2str.asm" target="_blank"><code>mods/int2str.asm</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> (integer-to-ASCII conversion in runtime),
+                            <a href="https://github.com/tomezpl/not-c/blob/master/bridge.py" target="_blank"><code>bridge.py</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> (frontend-backend interface),
+                            <a href="https://github.com/tomezpl/not-c/blob/master/intercodegen.py" target="_blank"><code>intercodegen.py</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> (converting tokens to intermediate code),
+                            and <a href="https://github.com/tomezpl/not-c/blob/master/asm.py" target="_blank"><code>asm.py</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> (generating x86 assembly).
+                        </p>
                     `
                 }
             ]
