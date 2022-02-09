@@ -11,7 +11,7 @@
                     v-bind:title="entry.title" 
                     v-bind:githubLink="entry.githubLink"
                     v-bind:tags="entry.tags">
-                    <div v-html="entry.content"></div>
+                    <div class="row" v-html="entry.content"></div>
                 </ShowcaseEntry>
                 <p>
                     For more projects, feel free to <a href="https://github.com/tomezpl">visit my GitHub</a>. &nbsp; <img style="vertical-align: middle; height: 1.5em;" src="./assets/GitHub-Mark-Light-64px.png" />
@@ -93,7 +93,30 @@
                             <img src="/assets/physxpinball.gif" class="w-100" />
                         </div>
                         <div class="col-1 col-md-2 col-xl-3"></div>
-`
+                    `
+                },
+                {
+                    id: 2,
+                    title: 'Survive the Hunt',
+                    githubLink: 'https://github.com/tomezpl/sth-gamemode',
+                    tags: ['C#', 'FiveM', 'GTA V Modding', 'gameplay scripting', 'UI programming'],
+                    content: `
+                        <p>
+                            Purely a hobby project aiming to implement the basic rules of the community-created &quot;Survive the Hunt&quot; gamemode, recently made popular by the FailRace YouTube channel.
+                        </p>
+                        <p>
+                            The gamemode is implemented using the community multiplayer platform for GTA V on the PC, aka. FiveM, using its CSharp API and the GTAV &quot;natives&quot; (callable functions from the game's executable).
+                            A rudimentary UI displaying a portrait of the currently hunted player, the current objective, highlighting the search area etc. has also been implemented using GTAV's UI functions.
+                        </p>
+                        <p>
+                            Below is a short trailer-like video showcasing the mod:
+                        </p>
+                        <div class="col-1 col-md-2 col-xl-3"></div>
+                        <div class="col-10 col-md-8 col-xl-6">
+                            <iframe class="w-100" width="560" height="315" src="https://www.youtube-nocookie.com/embed/WbWL-sUzcAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-1 col-md-2 col-xl-3"></div>
+                    `
                 }
             ]
         })
