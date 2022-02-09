@@ -411,6 +411,18 @@ half4 frag(Varyings IN) : SV_Target
                             and <a href="https://github.com/tomezpl/not-c/blob/master/asm.py" target="_blank"><code>asm.py</code><i class="bi-box-arrow-up-right tiny-icon align-top"></i></a> (generating x86 assembly).
                         </p>
                     `
+                },
+                {
+                    elId: '',
+                    id: 6,
+                    title: 'This website!',
+                    tags: ['HTML', 'CSS', 'JavaScript', 'Vue3', 'Bootstrap'],
+                    githubLink: 'https://github.com/tomezpl/tomezpl.github.io',
+                    content: `
+                        <p>
+                            I've written this website by myself using Vue CLI and Bootstrap. You can even browse the source code for this very page on <a href="https://github.com/tomezpl/tomezpl.github.io/blob/master/src/Showcase.vue" target="_blank">GitHub<i class="bi-box-arrow-up-right tiny-icon align-top"></i></a>!
+                        </p>
+                    `
                 }
             ]
         })
