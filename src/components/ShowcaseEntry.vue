@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-4">
+    <div class="showcase-entry">
         <h3>
             <a v-bind:href="githubLink" target="_blank">
                 {{title}}
@@ -7,9 +7,10 @@
             </a>
         </h3>
         <p>
-            <span class="badge badge-info" v-for="tag in tags" :key="tag">{{tag}}</span>
+            <span class="badge bg-success mx-1" v-for="tag in tags" :key="tag">{{tag}}</span>
         </p>
         <slot></slot>
+        <hr class="blog-post-separator mt-4 mb-3 w-100" />
     </div>
 </template>
 
