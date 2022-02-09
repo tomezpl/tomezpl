@@ -56,3 +56,9 @@ i.small-icon {
 i.tiny-icon {
     font-size: 0.5rem;
 }
+
+pre.hlsl-code {
+    min-height: 200px;
+    height: 400px;
+    resize: vertical;
+}
