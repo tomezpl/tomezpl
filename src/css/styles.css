@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #1F1F1F;
 }
@@ -34,13 +38,27 @@ body {
     color: #00CF58;
 }
 
-.blog-post-separator {
-    height: 1em!important;
+hr.blog-post-separator {
+    height: 1em !important;
     width: 98%;
     text-align: center;
     margin: 0.5em auto;
 }
 
-.blog-post:last-of-type + .blog-post-separator {
+.blog-post:last-of-type + hr.blog-post-separator, .showcase-entry:last-of-type hr.blog-post-separator {
     display: none;
+}
+
+i.small-icon {
+    font-size: 1rem;
+}
+
+i.tiny-icon {
+    font-size: 0.5rem;
+}
+
+pre.hlsl-code {
+    min-height: 200px;
+    height: 400px;
+    resize: vertical;
 }
