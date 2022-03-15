@@ -226,10 +226,10 @@
                             this has evolved into a personal project I've been putting a lot of time and effort into (as much time as you can reasonably afford as a working person, that is).
                         </p>
                         <p>
-                            The game is a silly multiplayer third-person shooter (originally FPS, as per the game jam theme) featuring weaponised Roomba-like cleaning robots unleashing violence upon one another when left alone in an unsuspecting owner's apartment.
+                            The game is a multiplayer third-person shooter (originally FPS, as per the game jam theme) featuring weaponised Roomba-like cleaning robots unleashing violence upon one another when left alone in an unsuspecting owner's apartment.
                         </p>
                         <p>
-                            While the game has a fairly limited scope and no striking visuals, for example, it taught me a lot about multiple facets of indie game development, and served as a lesson in identifying common errors,
+                            While the game is not of a large scope and does not feature striking visuals, for example, it taught me a lot about multiple facets of indie game development, and served as a lesson in identifying common errors,
                             not only in terms of code/technical implementation, but also project management, etc.
                         </p>
                         <p>
