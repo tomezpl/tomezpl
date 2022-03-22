@@ -1,0 +1,18 @@
+.planner-timeline {
+
+}
+
+.planner-timeline-bihour {
+
+}
+
+.planner-timeline-hour {
+    min-height: 40px;
+    border: 1px solid white;
+}
+
+.planner-timeline-quarter-notch {
+    border-right: 1px solid white;
+    height: 20px;
+    vertical-align: bottom;
+}

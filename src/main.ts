@@ -9,6 +9,7 @@ import MainSite from './MainSite.vue'
 import NotFound from './NotFound.vue'
 import About from './About.vue'
 import Showcase from './Showcase.vue'
+import Planner from './Planner.vue';
 
 createApp({
     data() {
@@ -26,6 +27,8 @@ createApp({
                     return About;
                 case '/showcase.html':
                     return Showcase;
+                case '/planner.html':
+                    return Planner;
                 default:
                     return NotFound;
             }

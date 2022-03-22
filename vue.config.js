@@ -33,6 +33,16 @@ module.exports = {
             // chunks to include on this page, by default includes
             // extracted common chunks and vendor chunks.
             chunks: ['chunk-vendors', 'chunk-common', 'index']
+        },
+        planner: {
+            entry: 'src/main.ts',
+            template: 'public/planner.html',
+            filename: 'planner.html',
+            title: 'Planner BETA',
+
+            // chunks to include on this page, by default includes
+            // extracted common chunks and vendor chunks.
+            chunks: ['chunk-vendors', 'chunk-common', 'index']
         }
     }
 }
