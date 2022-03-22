@@ -15,4 +15,9 @@
     border-right: 1px solid white;
     height: 20px;
     vertical-align: bottom;
+    display: none;
+}
+
+.planner-timeline-axis .planner-timeline-quarter-notch {
+    display: inline-block;
 }
