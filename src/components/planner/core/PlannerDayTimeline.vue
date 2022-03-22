@@ -5,7 +5,7 @@
                 <div class="row m-0 p-0">
                     <div class="col-12 p-0 m-0">
                         <slot :bihour="n" :hourpart="m" :hour="toHour(n, m)">
-                            <span v-show="axis">{{(n-1)*2 + m - 1}}</span>
+                            <span v-show="axis">{{toFormattedHour(n, m)}}</span>
                         </slot>
                     </div>
                     <div class="col-12 m-0 p-0">
@@ -32,6 +32,12 @@
         methods: {
             toHour(n: number, m: number): number {
                 return (n - 1) * 2 + m - 1;
+            },
+            toFormattedHour(n: number, m: number) {
+                return this.toFormattedHourStr(this.toHour(n, m));
+            },
+            toFormattedHourStr(h: number) {
+                return `${h < 10 ? '0' : ''}${h}:00`;
             }
         }
     });
