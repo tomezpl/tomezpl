@@ -1,13 +1,21 @@
 <template>
-    <template v-for="(blogPost, index) in sortedBlogPosts" :key="index">
-        <BlogPost :entry="blogPost" />
-        <hr class="blog-post-separator" />
-    </template>
+    <div class="container text-light">
+        <Header />
+        <div class="row site-body body-headernav-border">
+            <template v-for="(blogPost, index) in sortedBlogPosts" :key="index">
+                <BlogPost :entry="blogPost" />
+                <hr class="blog-post-separator" />
+            </template>
+        </div>
+        <Footer />
+    </div>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import BlogPost from './BlogPost.vue';
+    import Header from './components/Header.vue';
+    import BlogPost from './components/BlogPost.vue';
+    import Footer from './components/Footer.vue';
 
     interface BlogEntryMeta {
         id: number;
@@ -23,9 +31,11 @@
     }
 
     export default defineComponent({
-        name: 'SiteBody',
+        name: 'Blog',
         components: {
-            BlogPost
+            Header,
+            BlogPost,
+            Footer
         },
         /*eslint-disable no-unused-labels */
         data() {
@@ -44,19 +54,12 @@
         /*eslint-disable no-unused-labels */
         methods: {
             populateBlogPosts() {
-                console.log('Fetching blog index...');
                 return fetch(`${window.location.origin}/db/blog/index.json`, {
                     method: 'GET'
                 }).then(response => {
-                    console.log('Got index.json. Parsing...');
                     return response.json()
                 }).then(responseJson => {
-                    console.log('Parsed index.json');
-                    console.log(responseJson);
-
                     const indexArray: Array<string> = responseJson;
-
-                    console.log('Iterating through index to populate the array with all blogposts...');
 
                     const blogDb = this.blogDb;
                     indexArray.map((indexEntry) => {

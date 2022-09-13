@@ -1,3 +1,17 @@
+// Required
+@import "~bootstrap/scss/functions";
+
+$color-dark: #333D39;
+$color-turqouise: #4BA399;
+$color-blue: #3F7087;
+$color-purple: #2D3256;
+$color-light: #E7F7F6;
+
+$light: $color-light;
+
+// Required
+@import "~bootstrap/scss/bootstrap";
+
 html {
     scroll-behavior: smooth;
 }
@@ -62,3 +76,7 @@ pre.hlsl-code {
     height: 400px;
     resize: vertical;
 }
+
+/*:root {
+    --bs-light: $color-light;
+}*/

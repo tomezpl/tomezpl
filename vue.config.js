@@ -1,4 +1,17 @@
 module.exports = {
+    configureWebpack: {
+        module: {
+            rules: [
+                {
+                    test: /\.scss$/,
+                    use: [
+                        'sass-loader'
+                    ],
+                    exclude: [/node_modules/]
+                }
+            ]
+        }
+    },
     pages: {
         index: {
             // entry for the page
@@ -12,6 +25,13 @@ module.exports = {
             title: 'Tom Zajac',
             // chunks to include on this page, by default includes
             // extracted common chunks and vendor chunks.
+            chunks: ['chunk-vendors', 'chunk-common', 'index']
+        },
+        blog: {
+            entry: 'src/main.ts',
+            template: 'public/blog.html',
+            filename: 'blog.html',
+            title: 'Tom Zajac - Dev Blog',
             chunks: ['chunk-vendors', 'chunk-common', 'index']
         },
         about: {

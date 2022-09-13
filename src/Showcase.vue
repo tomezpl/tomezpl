@@ -28,7 +28,6 @@
     import Header from './components/Header.vue';
     import Footer from './components/Footer.vue';
     import ShowcaseEntry from './components/ShowcaseEntry.vue';
-    import './css/styles.css';
 
     class ShowcaseEntryData {
         id: number;

@@ -54,7 +54,6 @@
     import { defineComponent } from 'vue';
     import Header from './components/Header.vue';
     import Footer from './components/Footer.vue';
-    import './css/styles.css';
 
     export default defineComponent({
         name: 'About',
