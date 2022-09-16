@@ -7,7 +7,11 @@ $color-blue: #3F7087;
 $color-purple: #2D3256;
 $color-light: #E7F7F6;
 
+$info: $color-purple;
 $light: $color-light;
+$primary: $color-blue;
+$dark: $color-dark;
+$success: $color-turqouise;
 
 // Required
 @import "~bootstrap/scss/bootstrap";
@@ -17,7 +21,7 @@ html {
 }
 
 body {
-    background-color: #1F1F1F;
+    background-color: $dark;
 }
 
 .tz-logo {
@@ -27,7 +31,7 @@ body {
     box-shadow: #424242 0px 0px 15px;
 }
 
-.nav, .footer {
+/*.nav, .footer {
     border-right: 5px solid #00CF58;
 }
 
@@ -46,7 +50,7 @@ body {
 
 .site-body {
     border-left: 5px solid #00CF58;
-}
+}*/
 
 .blog-post a, .blog-post a:visited, a.green-link, a.green-link:visited {
     color: #00CF58;
