@@ -1,27 +1,33 @@
 <template>
   <div class="container-fluid p-0">
-    <div class="row navbar p-3 navbar-expand-md navbar-dark bg-primary sticky-top rounded-bottom">
-      <h1 class="navbar-brand col-md-2 me-0">Tomasz Zając</h1>
+    <div class="row navbar py-0 navbar-expand-md navbar-dark bg-info sticky-top">
+      <h1 class="navbar-brand col-5 col-md-2 me-0 mb-0 h-100 py-0">
+        <div class="col-12 tz-brand-gradient text-dark py-4">
+          <span class="w-100 mx-auto d-block text-center fs-4">
+            Tomasz Zając
+          </span>
+        </div>
+      </h1>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler col-2 me-2 my-2"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="collapse navbar-collapse p-0 my-2" id="navbarContent">
         <ul class="navbar-nav col-md-8 mb-2 mb-md-0">
           <li class="nav-item col-md-3 px-3 my-md-0 my-1 mt-2">
-            <a class="btn btn-outline-success bg-gradient border-3 nav-link active" aria-current="page" href="#">Home</a>
+            <a class="btn btn-outline-secondary bg-gradient border-3 nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item col-md-3 px-3 my-md-0 my-1">
-            <a class="btn btn-outline-success bg-gradient border-3 nav-link" href="#">Blog</a>
+            <a class="btn btn-outline-secondary bg-gradient border-3 nav-link" href="#">Blog</a>
           </li>
           <li class="nav-item col-md-3 px-3 my-md-0 my-1">
-            <a class="btn btn-outline-success bg-gradient border-3 nav-link" href="#">Showcase</a>
+            <a class="btn btn-outline-secondary bg-gradient border-3 nav-link" href="#">Showcase</a>
           </li>
           <li class="nav-item col-md-3 px-3 my-md-0 my-1">
-            <a class="btn btn-outline-success bg-gradient border-3 nav-link" href="#">About</a>
+            <a class="btn btn-outline-secondary bg-gradient border-3 nav-link" href="#">About</a>
           </li>
         </ul>
       </div>
