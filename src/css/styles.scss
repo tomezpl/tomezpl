@@ -6,14 +6,19 @@ $color-turqouise: #4BA399;
 $color-blue: #3F7087;
 $color-purple: #2D3256;
 $color-light: #E7F7F6;
-$color-secondary: #ff5e00;
+$color-orange: #e4712f;
+$color-greenish: #B9CE9F;
+$color-easyblue: #466B89;
 
 $info: $color-purple;
 $light: $color-light;
 $primary: $color-blue;
-$secondary: $color-secondary;
 $dark: $color-dark;
 $success: $color-turqouise;
+$warning: $color-orange;
+$secondary: $color-easyblue;
+
+$enable-negative-margins: true;
 
 // Required
 @import "~bootstrap/scss/bootstrap";
