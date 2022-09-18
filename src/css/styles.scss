@@ -1,5 +1,8 @@
 // Required
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
 
 $color-dark: #333D39;
 $color-turqouise: #4BA399;
@@ -9,6 +12,11 @@ $color-light: #E7F7F6;
 $color-orange: #e4712f;
 $color-greenish: #B9CE9F;
 $color-easyblue: #466B89;
+$color-roseypink: #BA6781;
+$color-lightrosey: #FFBFE4;
+$color-violet: #744b79;
+$color-strongpurple: #5c0074;
+$color-silver: #5a5a5a;
 
 $info: $color-purple;
 $light: $color-light;
@@ -19,6 +27,26 @@ $warning: $color-orange;
 $secondary: $color-easyblue;
 
 $enable-negative-margins: true;
+
+.btn-tznav {
+    @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
+    @include border-radius(0.9rem);
+    @include gradient-directional(rgba(tint-color($color-roseypink, 25%), 0.7), rgba(tint-color($color-strongpurple, 30%), 0.7), -140deg);
+    &:hover {
+        @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -140deg);
+    }
+
+    &:active,
+    &.active
+    {
+        @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -140deg);
+    }
+
+    min-width: 10rem;
+    color: rgba($color-light, 0.875);
+
+    font-size: 1.35em;
+}
 
 // Required
 @import "~bootstrap/scss/bootstrap";
@@ -39,7 +67,7 @@ body {
 }
 
 .tz-brand-gradient {
-    background-image: linear-gradient(90deg, #b85e92 4%, #ca8ac2 20%, #ffb6a4, rgb(212, 212, 212) , $info);
+    background-image: linear-gradient(0deg, $color-roseypink, $color-violet);
 }
 
 /*.nav, .footer {

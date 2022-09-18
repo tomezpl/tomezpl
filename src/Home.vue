@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid p-0">
     <div class="row sticky-top">
-      <div class="navbar p-0 navbar-expand-md navbar-dark bg-info bg-gradient">
+      <div class="navbar p-0 navbar-expand-md navbar-dark tz-brand-gradient">
         <div class="navbar-brand col-10 col-md-2 me-0 mb-0 py-0">
-          <div class="bg-primary bg-gradient py-2">
+          <div class="py-2">
             <span class="w-100 mx-auto d-block text-center fs-4">
               Tomasz Zając
             </span>
@@ -19,17 +19,17 @@
         </button>
         <div class="collapse navbar-collapse p-0" id="navbarContent">
           <ul class="navbar-nav mb-2 mb-md-0">
-            <li class="nav-item px-3 my-md-0 my-1 mt-2">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <li class="nav-item px-3 my-md-0 my-1 mt-2 py-2">
+              <a class="nav-link active btn-tznav text-center fw-bold shadow-sm px-1" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item px-3 my-md-0 my-1">
-              <a class="nav-link" href="#">Blog</a>
+            <li class="nav-item px-3 my-md-0 my-1 py-2">
+              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">Blog</a>
             </li>
-            <li class="nav-item px-3 my-md-0 my-1">
-              <a class="nav-link" href="#">Showcase</a>
+            <li class="nav-item px-3 my-md-0 my-1 py-2">
+              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">Showcase</a>
             </li>
-            <li class="nav-item px-3 my-md-0 my-1">
-              <a class="nav-link" href="#">About</a>
+            <li class="nav-item px-3 my-md-0 my-1 py-2">
+              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">About</a>
             </li>
           </ul>
         </div>
