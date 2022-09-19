@@ -20,16 +20,16 @@
         <div class="collapse navbar-collapse p-0" id="navbarContent">
           <ul class="navbar-nav mb-2 mb-md-0">
             <li class="nav-item px-3 my-md-0 my-1 mt-2 py-2">
-              <a class="nav-link active btn-tznav text-center fw-bold shadow-sm px-1" aria-current="page" href="#">Home</a>
+              <a class="nav-link active btn-tznav text-center fw-bold shadow px-1" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item px-3 my-md-0 my-1 py-2">
-              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">Blog</a>
+              <a class="nav-link btn-tznav text-center fw-bold shadow px-1" href="#">Blog</a>
             </li>
             <li class="nav-item px-3 my-md-0 my-1 py-2">
-              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">Showcase</a>
+              <a class="nav-link btn-tznav text-center fw-bold shadow px-1" href="#">Showcase</a>
             </li>
             <li class="nav-item px-3 my-md-0 my-1 py-2">
-              <a class="nav-link btn-tznav text-center fw-bold shadow-sm px-1" href="#">About</a>
+              <a class="nav-link btn-tznav text-center fw-bold shadow px-1" href="#">About</a>
             </li>
           </ul>
         </div>

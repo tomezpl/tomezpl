@@ -34,16 +34,29 @@ $enable-negative-margins: true;
     @include gradient-directional(rgba(tint-color($color-roseypink, 25%), 0.7), rgba(tint-color($color-strongpurple, 30%), 0.7), -140deg);
     &:hover {
         @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -140deg);
+
+        border: 0.07em solid rgba($color-strongpurple, 0.3);
     }
 
     &:active,
     &.active
     {
         @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -140deg);
+        border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
+        text-shadow: 1px 1px 5px rgba(black, 0.55);
+    }
+
+    &:focus
+    {
+        border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
+        text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
 
     min-width: 10rem;
     color: rgba($color-light, 0.875);
+
+    border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
+    text-shadow: 1px 1px 5px rgba(black, 0.35);
 
     font-size: 1.35em;
 }
