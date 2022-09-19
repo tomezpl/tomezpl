@@ -17,6 +17,12 @@ $color-lightrosey: #FFBFE4;
 $color-violet: #744b79;
 $color-strongpurple: #5c0074;
 $color-silver: #5a5a5a;
+$color-aqua: #90E0D5;
+$color-darkaqua: #2C6160;
+$color-beige: #D3BFA7;
+$color-seaweed: #BDC190;
+$color-beigepink: #E5B8C0;
+$color-beigepurple: #B395A3;
 
 $info: $color-purple;
 $light: $color-light;
@@ -27,6 +33,18 @@ $warning: $color-orange;
 $secondary: $color-easyblue;
 
 $enable-negative-margins: true;
+
+.side-bg {
+    background: linear-gradient(to bottom, shade-color($color-purple, 50%), shade-color($color-lightrosey, 90%));
+}
+
+.main-page-content:nth-child(odd) {
+    background: shade-color($color-roseypink, 90%);
+}
+
+.main-page-content:nth-child(even) {
+    background: shade-color($color-violet, 65%);
+}
 
 .btn-tznav {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
@@ -77,6 +95,10 @@ body {
     background-color: #1F1F1F;
     border: 2px solid black;
     box-shadow: #424242 0px 0px 15px;
+}
+
+.tz-brand-border {
+    border-bottom-color: $color-lightrosey!important;
 }
 
 .tz-brand-gradient {
