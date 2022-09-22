@@ -10,6 +10,7 @@ import NotFound from './NotFound.vue'
 import About from './About.vue'
 import Showcase from './Showcase.vue'
 import Blog from './Blog.vue'
+import MasterLayout from './MasterLayout.vue';
 
 createApp({
     data() {
@@ -35,6 +36,6 @@ createApp({
         }
     },
     render(): VNode {
-        return h(this.ViewComponent);
+        return h(MasterLayout, () => h(this.ViewComponent));
     }
 }).mount("#app");
