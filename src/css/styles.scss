@@ -39,11 +39,11 @@ $enable-negative-margins: true;
 }
 
 .main-page-content:nth-child(odd) {
-    background: shade-color($color-roseypink, 90%);
+    background: rgba(shade-color($color-roseypink, 90%), 0.3);
 }
 
 .main-page-content:nth-child(even) {
-    background: shade-color($color-violet, 65%);
+    background: rgba(shade-color($color-violet, 65%), 0.3);
 }
 
 .btn-tznav {
