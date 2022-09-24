@@ -9,6 +9,10 @@
   </div>
 </template>
 
+<style lang="scss">
+@import './css/styles.scss';
+</style>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "./components/Header.vue";

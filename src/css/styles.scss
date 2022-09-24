@@ -1,8 +1,5 @@
-// Required
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/utilities";
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Rajdhani:wght@500;600&display=swap');
 
 $color-dark: #333D39;
 $color-turqouise: #4BA399;
@@ -32,6 +29,13 @@ $success: $color-turqouise;
 $warning: $color-orange;
 $secondary: $color-easyblue;
 
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+
 $enable-negative-margins: true;
 
 .side-bg {
@@ -44,6 +48,19 @@ $enable-negative-margins: true;
 
 .main-page-content:nth-child(even) {
     background: rgba(shade-color($color-violet, 65%), 0.3);
+}
+
+.home-intro-cover {
+    min-height: 40em;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+div.navbar {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+div.navbar li.nav-item {
+    font-size: 1.3rem;
 }
 
 .btn-tznav {

@@ -61,11 +61,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse p-0" id="navbarContent">
+      <nav class="collapse navbar-collapse p-0" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-md-0">
           <li class="nav-item px-3 my-md-0 my-1 mt-2 py-2">
             <a
-              class="nav-link active btn-tznav text-center fw-bold shadow px-1"
+              class="nav-link active btn-tznav text-center fw-bold shadow px-1 py-0"
               aria-current="page"
               href="#"
               >Home</a
@@ -73,27 +73,27 @@
           </li>
           <li class="nav-item px-3 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1"
+              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
               href="#"
               >Blog</a
             >
           </li>
           <li class="nav-item px-3 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1"
+              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
               href="#"
               >Showcase</a
             >
           </li>
           <li class="nav-item px-3 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1"
+              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
               href="#"
               >About</a
             >
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   </div>
 </template>
