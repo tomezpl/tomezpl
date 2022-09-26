@@ -65,10 +65,10 @@ div.navbar li.nav-item {
 
 .btn-tznav {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
-    @include border-radius(0.9rem);
-    @include gradient-directional(rgba(tint-color($color-roseypink, 25%), 0.7), rgba(tint-color($color-strongpurple, 30%), 0.7), -140deg);
+    @include border-radius(0.8rem);
+    @include gradient-directional(rgba(tint-color($color-roseypink, 45%), 0.7), rgba(tint-color($color-strongpurple, 10%), 0.7), -150deg);
     &:hover {
-        @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -140deg);
+        @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -150deg);
 
         border: 0.07em solid rgba($color-strongpurple, 0.3);
     }
@@ -76,7 +76,7 @@ div.navbar li.nav-item {
     &:active,
     &.active
     {
-        @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -140deg);
+        @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -150deg);
         border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
