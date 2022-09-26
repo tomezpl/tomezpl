@@ -40,12 +40,19 @@
       class="
         navbar
         p-0
-        navbar-expand-md navbar-dark
-        tz-brand-gradient tz-brand-border
-        border-2 border-bottom
-        shadow-lg
+        px-4
+        navbar-dark
+        tz-brand-gradient
       "
     >
+      <button
+        class="navbar-toggler ms-1"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="navbar-brand col-10 col-md-2 me-0 mb-0 py-0">
         <div class="py-2">
           <span class="w-100 mx-auto d-block text-center fs-4">
@@ -53,49 +60,41 @@
           </span>
         </div>
       </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarContent"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <nav class="collapse navbar-collapse p-0" id="navbarContent">
+    </div>
+  </div>
+  <nav :class="navbarContentClasses" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-md-0">
-          <li class="nav-item px-3 my-md-0 my-1 mt-2 py-2">
+          <li class="nav-item px-1 my-md-0 my-1 mt-2 py-2">
             <a
-              class="nav-link active btn-tznav text-center fw-bold shadow px-1 py-0"
+              class="nav-link active btn-tznav text-center fw-bold shadow p-0"
               aria-current="page"
               href="#"
               >Home</a
             >
           </li>
-          <li class="nav-item px-3 my-md-0 my-1 py-2">
+          <li class="nav-item px-1 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
+              class="nav-link btn-tznav text-center fw-bold shadow p-0"
               href="#"
               >Blog</a
             >
           </li>
-          <li class="nav-item px-3 my-md-0 my-1 py-2">
+          <li class="nav-item px-1 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
+              class="nav-link btn-tznav text-center fw-bold shadow p-0"
               href="#"
               >Showcase</a
             >
           </li>
-          <li class="nav-item px-3 my-md-0 my-1 py-2">
+          <li class="nav-item px-1 my-md-0 my-1 py-2">
             <a
-              class="nav-link btn-tznav text-center fw-bold shadow px-1 py-0"
+              class="nav-link btn-tznav text-center fw-bold shadow p-0"
               href="#"
               >About</a
             >
           </li>
         </ul>
       </nav>
-    </div>
-  </div>
 </template>
 
 <script lang="ts">
@@ -103,9 +102,37 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Header",
+  mounted() {
+      const navCollapsible = document.getElementById('navbarContent');
+      navCollapsible?.addEventListener('show.bs.collapse', this.toggleNav);
+
+      navCollapsible?.addEventListener('hide.bs.collapse', this.toggleNav);
+  },
+  methods: {
+    toggleNav(ev : Event) {
+      if(ev !== undefined && ev !== null)
+      {
+        ev.preventDefault();
+      }
+      
+      this.isNavShowing = !this.isNavShowing;
+    }
+  },
+  computed: {
+
+    navbarContentClasses() {
+      let classToApply = 'tz-navbar-hidden';
+      if(this.isNavShowing === true)
+      {
+        classToApply = 'tz-navbar-shown';
+      }
+      return `navbar-dark col-sm-4 col-md-3 col-lg-2 p-0 tz-brand-gradient-sub ${classToApply}`;
+    }
+  },
   data() {
     return {
       path: window.location.pathname,
+      isNavShowing: false
     };
   },
 });
