@@ -29,6 +29,8 @@ $success: $color-turqouise;
 $warning: $color-orange;
 $secondary: $color-easyblue;
 
+$enable-negative-margins: true;
+
 // Required
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -36,7 +38,20 @@ $secondary: $color-easyblue;
 @import "~bootstrap/scss/utilities";
 
 
-$enable-negative-margins: true;
+$utilities: map-merge(
+  $utilities,
+  (
+    "border-color": map-merge(
+        map-get($utilities, "border-color"),
+        (
+            values: map-merge(
+                map-get(map-get($utilities, "border-color"), values),
+                ("lightpink": rgba(tint-color($color-lightrosey, 40%), 0.8))
+            )
+        )
+    )
+  )
+);
 
 .side-bg {
     background: linear-gradient(to bottom, shade-color($color-purple, 50%), shade-color($color-lightrosey, 90%));
@@ -87,25 +102,49 @@ div.navbar li.nav-item {
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
 
-    min-width: 8rem;
+    width: 8rem;
+
     color: rgba($color-light, 0.875);
 
-    border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
     text-shadow: 1px 1px 5px rgba(black, 0.35);
 
-    font-size: 1.35em;
+    font-size: 1.35rem;
     
-    min-height: 2.6em;
+    height: 3.5rem;
+    position: relative;
+    z-index: 1022;
+}
+
+.btn-tznav-icon {
+    background-image: linear-gradient(to right, shade-color($color-roseypink, 50%), tint-color($color-roseypink, 20%));
+    height: 3.5rem;
+    width: 4rem;
+    font-size: 2rem;
+    @include border-radius(0.8rem);
+    z-index: 1021;
+    color: $light;
+}
+
+.btn-tznav-icon i {
+    margin-right: 0.3rem;
+}
+
+.tz-navbar-border {
+    border-color: tint-color($color-roseypink, 10%)!important;
 }
 
 // Required
 @import "~bootstrap/scss/bootstrap";
 
 #navbarContent {
-    position: fixed;
     height: 100vh;
     transition: transform 0.15s ease;
     backdrop-filter: blur(2px);
+    width: 80%;
+}
+
+#navbarContent ul li.nav-item {
+    display: inline-block;
 }
 
 .tz-navbar-hidden {
@@ -145,7 +184,7 @@ body {
 }
 
 .tz-brand-gradient-sub {
-    background-image: linear-gradient(0deg, rgba($color-beigepink, 0.5), rgba($color-roseypink, 0.7));
+    background-image: linear-gradient(-90deg, rgba(tint-color($color-roseypink, 30%), 0.2), rgba($color-roseypink, 0.5));
 }
 
 /*.nav, .footer {

@@ -43,6 +43,7 @@
         px-4
         navbar-dark
         tz-brand-gradient
+        border-2 border-bottom border-lightpink
       "
     >
       <button
@@ -62,39 +63,119 @@
       </div>
     </div>
   </div>
-  <nav :class="navbarContentClasses" id="navbarContent">
-        <ul class="navbar-nav mb-2 mb-md-0">
-          <li class="nav-item px-1 my-md-0 my-1 mt-2 py-2">
-            <a
-              class="nav-link active btn-tznav text-center fw-bold shadow p-0"
-              aria-current="page"
-              href="#"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item px-1 my-md-0 my-1 py-2">
-            <a
-              class="nav-link btn-tznav text-center fw-bold shadow p-0"
-              href="#"
-              >Blog</a
-            >
-          </li>
-          <li class="nav-item px-1 my-md-0 my-1 py-2">
-            <a
-              class="nav-link btn-tznav text-center fw-bold shadow p-0"
-              href="#"
-              >Showcase</a
-            >
-          </li>
-          <li class="nav-item px-1 my-md-0 my-1 py-2">
-            <a
-              class="nav-link btn-tznav text-center fw-bold shadow p-0"
-              href="#"
-              >About</a
-            >
-          </li>
-        </ul>
-      </nav>
+  <div class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed">
+    <nav :class="navbarContentClasses" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-md-0">
+        <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
+          <a
+            class="
+              nav-link
+              active
+              btn-tznav
+              text-center
+              fw-bold
+              shadow
+              py-auto
+              px-0
+            "
+            aria-current="page"
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+          <a
+            class="
+              nav-link
+              btn-tznav
+              text-center
+              fw-bold
+              shadow
+              py-auto
+              px-0
+              d-inline-block
+            "
+            href="#"
+            >Blog</a
+          >
+          <div
+            class="
+              btn-tznav-icon
+              d-inline-block
+              pe-0
+              py-auto
+              align-top
+              ms-n4
+              shadow
+              clearfix
+            "
+          >
+            <i class="bi bi-journal-bookmark float-end"></i>
+          </div>
+        </li>
+        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+          <a
+            class="
+              nav-link
+              btn-tznav
+              text-center
+              fw-bold
+              shadow
+              py-auto
+              px-0
+              d-inline-block
+            "
+            href="#"
+            >Showcase</a
+          >
+          <div
+            class="
+              btn-tznav-icon
+              d-inline-block
+              pe-0
+              py-auto
+              align-top
+              ms-n4
+              shadow
+              clearfix
+            "
+          >
+            <i class="bi bi-code float-end"></i>
+          </div>
+        </li>
+        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+          <a
+            class="
+              nav-link
+              btn-tznav
+              text-center
+              fw-bold
+              shadow
+              py-auto
+              px-0
+              d-inline-block
+            "
+            href="#"
+            >About</a
+          >
+          <div
+            class="
+              btn-tznav-icon
+              d-inline-block
+              pe-0
+              py-auto
+              align-top
+              ms-n4
+              shadow
+              clearfix
+            "
+          >
+            <i class="bi bi-person-fill float-end"></i>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script lang="ts">
@@ -103,36 +184,33 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Header",
   mounted() {
-      const navCollapsible = document.getElementById('navbarContent');
-      navCollapsible?.addEventListener('show.bs.collapse', this.toggleNav);
+    const navCollapsible = document.getElementById("navbarContent");
+    navCollapsible?.addEventListener("show.bs.collapse", this.toggleNav);
 
-      navCollapsible?.addEventListener('hide.bs.collapse', this.toggleNav);
+    navCollapsible?.addEventListener("hide.bs.collapse", this.toggleNav);
   },
   methods: {
-    toggleNav(ev : Event) {
-      if(ev !== undefined && ev !== null)
-      {
+    toggleNav(ev: Event) {
+      if (ev !== undefined && ev !== null) {
         ev.preventDefault();
       }
-      
+
       this.isNavShowing = !this.isNavShowing;
-    }
+    },
   },
   computed: {
-
     navbarContentClasses() {
-      let classToApply = 'tz-navbar-hidden';
-      if(this.isNavShowing === true)
-      {
-        classToApply = 'tz-navbar-shown';
+      let classToApply = "tz-navbar-hidden";
+      if (this.isNavShowing === true) {
+        classToApply = "tz-navbar-shown";
       }
-      return `navbar-dark col-sm-4 col-md-3 col-lg-2 p-0 tz-brand-gradient-sub ${classToApply}`;
-    }
+      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
+    },
   },
   data() {
     return {
       path: window.location.pathname,
-      isNavShowing: false
+      isNavShowing: false,
     };
   },
 });
