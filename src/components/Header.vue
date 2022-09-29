@@ -63,131 +63,144 @@
       </div>
     </div>
   </div>
-  <div class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed">
+  <div
+    class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed"
+  >
     <nav :class="navbarContentClasses" id="navbarContent">
-      <ul class="navbar-nav mb-2 mb-md-0">
-        <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
-          <a
-            class="
-              nav-link
-              active
-              btn-tznav
-              text-center
-              fw-bold
-              shadow
-              py-auto
-              px-0
-              d-inline-block
-            "
-            aria-current="page"
-            href="#"
-            >Home</a
-          ><div
-            class="
-              btn-tznav-icon
-              d-inline-block
-              pe-0
-              py-auto
-              align-top
-              ms-n4
-              shadow
-              clearfix
-            "
-          >
-            <i class="bi bi-house float-end"></i>
+      <div class="d-flex flex-column h-100">
+        <div class="mb-5">
+          <ul class="navbar-nav mb-2 mb-md-0">
+            <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
+              <a
+                class="
+                  nav-link
+                  active
+                  btn-tznav
+                  text-center
+                  fw-bold
+                  shadow
+                  py-auto
+                  px-0
+                  d-inline-block
+                "
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+              <div
+                class="
+                  btn-tznav-icon
+                  d-inline-block
+                  pe-0
+                  py-auto
+                  align-top
+                  ms-n4
+                  shadow
+                  clearfix
+                "
+              >
+                <i class="bi bi-house float-end"></i>
+              </div>
+            </li>
+            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+              <a
+                class="
+                  nav-link
+                  btn-tznav
+                  text-center
+                  fw-bold
+                  shadow
+                  py-auto
+                  px-0
+                  d-inline-block
+                "
+                href="#"
+                >Blog</a
+              >
+              <div
+                class="
+                  btn-tznav-icon
+                  d-inline-block
+                  pe-0
+                  py-auto
+                  align-top
+                  ms-n4
+                  shadow
+                  clearfix
+                "
+              >
+                <i class="bi bi-journal-bookmark float-end"></i>
+              </div>
+            </li>
+            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+              <a
+                class="
+                  nav-link
+                  btn-tznav
+                  text-center
+                  fw-bold
+                  shadow
+                  py-auto
+                  px-0
+                  d-inline-block
+                "
+                href="#"
+                >Showcase</a
+              >
+              <div
+                class="
+                  btn-tznav-icon
+                  d-inline-block
+                  pe-0
+                  py-auto
+                  align-top
+                  ms-n4
+                  shadow
+                  clearfix
+                "
+              >
+                <i class="bi bi-code float-end"></i>
+              </div>
+            </li>
+            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
+              <a
+                class="
+                  nav-link
+                  btn-tznav
+                  text-center
+                  fw-bold
+                  shadow
+                  py-auto
+                  px-0
+                  d-inline-block
+                "
+                href="#"
+                >About</a
+              >
+              <div
+                class="
+                  btn-tznav-icon
+                  d-inline-block
+                  pe-0
+                  py-auto
+                  align-top
+                  ms-n4
+                  shadow
+                  clearfix
+                "
+              >
+                <i class="bi bi-person float-end"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-fill">
+          <div class="text-center text-light mb-5">
+            <p>Tomasz Zajac</p>
+            <p>&copy; 2022</p>
           </div>
-        </li>
-        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-          <a
-            class="
-              nav-link
-              btn-tznav
-              text-center
-              fw-bold
-              shadow
-              py-auto
-              px-0
-              d-inline-block
-            "
-            href="#"
-            >Blog</a
-          >
-          <div
-            class="
-              btn-tznav-icon
-              d-inline-block
-              pe-0
-              py-auto
-              align-top
-              ms-n4
-              shadow
-              clearfix
-            "
-          >
-            <i class="bi bi-journal-bookmark float-end"></i>
-          </div>
-        </li>
-        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-          <a
-            class="
-              nav-link
-              btn-tznav
-              text-center
-              fw-bold
-              shadow
-              py-auto
-              px-0
-              d-inline-block
-            "
-            href="#"
-            >Showcase</a
-          >
-          <div
-            class="
-              btn-tznav-icon
-              d-inline-block
-              pe-0
-              py-auto
-              align-top
-              ms-n4
-              shadow
-              clearfix
-            "
-          >
-            <i class="bi bi-code float-end"></i>
-          </div>
-        </li>
-        <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-          <a
-            class="
-              nav-link
-              btn-tznav
-              text-center
-              fw-bold
-              shadow
-              py-auto
-              px-0
-              d-inline-block
-            "
-            href="#"
-            >About</a
-          >
-          <div
-            class="
-              btn-tznav-icon
-              d-inline-block
-              pe-0
-              py-auto
-              align-top
-              ms-n4
-              shadow
-              clearfix
-            "
-          >
-            <i class="bi bi-person float-end"></i>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </nav>
   </div>
 </template>
