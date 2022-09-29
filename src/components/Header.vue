@@ -77,11 +77,25 @@
               shadow
               py-auto
               px-0
+              d-inline-block
             "
             aria-current="page"
             href="#"
             >Home</a
+          ><div
+            class="
+              btn-tznav-icon
+              d-inline-block
+              pe-0
+              py-auto
+              align-top
+              ms-n4
+              shadow
+              clearfix
+            "
           >
+            <i class="bi bi-house float-end"></i>
+          </div>
         </li>
         <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
           <a
@@ -170,7 +184,7 @@
               clearfix
             "
           >
-            <i class="bi bi-person-fill float-end"></i>
+            <i class="bi bi-person float-end"></i>
           </div>
         </li>
       </ul>
