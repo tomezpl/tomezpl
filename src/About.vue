@@ -1,6 +1,5 @@
 <template>
     <div class="container text-light">
-        <Header />
         <div class="row site-body body-headernav-border">
             <div class="blog-post">
                 <h1>About me</h1>
@@ -46,20 +45,13 @@
                 </p>
             </div>
         </div>
-        <Footer />
     </div>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import Header from './components/Header.vue';
-    import Footer from './components/Footer.vue';
 
     export default defineComponent({
-        name: 'About',
-        components: {
-            Header,
-            Footer
-        }
+        name: 'About'
     });
 </script>

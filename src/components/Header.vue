@@ -86,7 +86,7 @@
                   d-inline-block
                 "
                 aria-current="page"
-                href="#"
+                href="index.html"
                 >Home</a
               >
               <div
@@ -116,7 +116,7 @@
                   px-0
                   d-inline-block
                 "
-                href="#"
+                href="blog.html"
                 >Blog</a
               >
               <div
@@ -146,7 +146,7 @@
                   px-0
                   d-inline-block
                 "
-                href="#"
+                href="showcase.html"
                 >Showcase</a
               >
               <div
@@ -176,7 +176,7 @@
                   px-0
                   d-inline-block
                 "
-                href="#"
+                href="about.html"
                 >About</a
               >
               <div

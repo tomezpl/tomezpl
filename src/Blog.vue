@@ -1,21 +1,17 @@
 <template>
     <div class="container text-light">
-        <Header />
         <div class="row site-body body-headernav-border">
             <template v-for="(blogPost, index) in sortedBlogPosts" :key="index">
                 <BlogPost :entry="blogPost" />
                 <hr class="blog-post-separator" />
             </template>
         </div>
-        <Footer />
     </div>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import Header from './components/Header.vue';
     import BlogPost from './components/BlogPost.vue';
-    import Footer from './components/Footer.vue';
 
     interface BlogEntryMeta {
         id: number;
@@ -33,9 +29,7 @@
     export default defineComponent({
         name: 'Blog',
         components: {
-            Header,
             BlogPost,
-            Footer
         },
         /*eslint-disable no-unused-labels */
         data() {

@@ -1,6 +1,5 @@
 <template>
     <div class="container text-light">
-        <Header />
         <div class="row site-body body-headernav-border">
             <div class="blog-post row">
                 <h1>Showcase</h1>
@@ -19,14 +18,11 @@
                 </p>
             </div>
         </div>
-        <Footer />
     </div>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import Header from './components/Header.vue';
-    import Footer from './components/Footer.vue';
     import ShowcaseEntry from './components/ShowcaseEntry.vue';
 
     class ShowcaseEntryData {
@@ -50,8 +46,6 @@
     export default defineComponent({
         name: 'Showcase',
         components: {
-            Header,
-            Footer,
             ShowcaseEntry
         },
         computed: {
