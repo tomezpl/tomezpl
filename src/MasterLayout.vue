@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid p-0">
-    <Header />
+    <Header>{{pageTitle}}</Header>
     <div class="row min-vh-100 side-bg pt-5 tz-brand-border">
       <div class="col-md-2 col-sm-1 d-sm-block d-none" />
       <div class="col-md-8 col-sm-10 col-12"><slot></slot>></div>
@@ -22,5 +22,11 @@ export default defineComponent({
   components: {
     Header,
   },
+  props: {
+    pageTitle: {
+      type: String,
+      default: 'Tomasz Zając'
+    }
+  }
 });
 </script>

@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { createApp, VNode, h } from 'vue';
+import { createApp, VNode, h, DefineComponent } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -12,6 +12,16 @@ import Showcase from './Showcase.vue'
 import Blog from './Blog.vue'
 import MasterLayout from './MasterLayout.vue';
 
+class PageData {
+    ViewComponent: object;
+    Title: string;
+
+    constructor(viewComponent: object, title: string) {
+        this.ViewComponent = viewComponent;
+        this.Title = title;
+    }
+}
+
 createApp({
     data() {
         return {
@@ -19,23 +29,24 @@ createApp({
         }
     },
     computed: {
-        ViewComponent() {
+        ViewComponentAndTitle() {
             switch (this.currentRoute) {
                 case '/index.html':
                 case '/':
-                    return Home;
+                    return new PageData(Home, 'Welcome');
                 case '/blog.html':
-                    return Blog;
+                    return new PageData(Blog, 'Dev blog');
                 case '/about.html':
-                    return About;
+                    return new PageData(About, 'About me');
                 case '/showcase.html':
-                    return Showcase;
+                    return new PageData(Showcase, 'Project showcase');
                 default:
-                    return NotFound;
+                    return new PageData(NotFound, 'Not found!');
             }
         }
     },
     render(): VNode {
-        return h(MasterLayout, () => h(this.ViewComponent));
+        const page = this.ViewComponentAndTitle;
+        return h(MasterLayout, {pageTitle: page.Title}, () => h(page.ViewComponent));
     }
 }).mount("#app");

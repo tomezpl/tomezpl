@@ -46,6 +46,7 @@
         border-2 border-bottom border-lightpink
       "
     >
+    <div class="col-2">
       <button
         class="navbar-toggler ms-1"
         type="button"
@@ -53,11 +54,12 @@
         data-bs-target="#navbarContent"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-brand col-10 col-md-2 me-0 mb-0 py-0">
+      </button></div>
+      <div class="col-8 text-center"><img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" /></div>
+      <div class="navbar-brand col-2 me-0 mb-0 py-0">
         <div class="py-2">
           <span class="w-100 mx-auto d-block text-center fs-4">
-            Tomasz Zając
+            <slot></slot>
           </span>
         </div>
       </div>

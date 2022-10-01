@@ -78,6 +78,11 @@ div.navbar li.nav-item {
     font-size: 1.3rem;
 }
 
+#tzLogoTopbar {
+    height: 4.5em;
+    width: auto;
+}
+
 .btn-tznav {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
     @include border-radius(0.8rem);
