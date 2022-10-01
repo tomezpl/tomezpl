@@ -196,7 +196,7 @@
         </div>
         <div class="flex-fill">
           <div class="h-100 text-center text-light">
-            <div class="h-75"></div>
+            <div class="h-50"></div>
             <p>Tomasz Zając</p>
             <p class="pb-5">&copy; 2022</p>
           </div>
