@@ -46,16 +46,19 @@
         border-2 border-bottom border-lightpink
       "
     >
-    <div class="col-2">
-      <button
-        class="navbar-toggler ms-1"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarContent"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button></div>
-      <div class="col-8 text-center"><img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" /></div>
+      <div class="col-2">
+        <button
+          class="navbar-toggler ms-1"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="col-8 text-center">
+        <img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" />
+      </div>
       <div class="navbar-brand col-2 me-0 mb-0 py-0">
         <div class="py-2">
           <span class="w-100 mx-auto d-block text-center fs-4">
@@ -74,18 +77,8 @@
           <ul class="navbar-nav mb-2 mb-md-0">
             <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
               <a
-                class="
-                  nav-link
-                  active
-                  btn-tznav
-                  text-center
-                  fw-bold
-                  shadow
-                  py-auto
-                  px-0
-                  d-inline-block
-                "
-                aria-current="page"
+                :class="getButtonClass('home')"
+                :aria-current="getButtonAriaCurrent('home')"
                 href="index.html"
                 >Home</a
               >
@@ -106,16 +99,8 @@
             </li>
             <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
               <a
-                class="
-                  nav-link
-                  btn-tznav
-                  text-center
-                  fw-bold
-                  shadow
-                  py-auto
-                  px-0
-                  d-inline-block
-                "
+                :class="getButtonClass('blog')"
+                :aria-current="getButtonAriaCurrent('blog')"
                 href="blog.html"
                 >Blog</a
               >
@@ -136,16 +121,8 @@
             </li>
             <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
               <a
-                class="
-                  nav-link
-                  btn-tznav
-                  text-center
-                  fw-bold
-                  shadow
-                  py-auto
-                  px-0
-                  d-inline-block
-                "
+                :class="getButtonClass('showcase')"
+                :aria-current="getButtonAriaCurrent('showcase')"
                 href="showcase.html"
                 >Showcase</a
               >
@@ -166,16 +143,8 @@
             </li>
             <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
               <a
-                class="
-                  nav-link
-                  btn-tznav
-                  text-center
-                  fw-bold
-                  shadow
-                  py-auto
-                  px-0
-                  d-inline-block
-                "
+                :class="getButtonClass('about')"
+                :aria-current="getButtonAriaCurrent('about')"
                 href="about.html"
                 >About</a
               >
@@ -227,6 +196,23 @@ export default defineComponent({
 
       this.isNavShowing = !this.isNavShowing;
     },
+    getButtonClass(targetPage: string): string {
+      const baseClass =
+        "nav-link btn-tznav text-center fw-bold shadow py-auto px-0 d-inline-block";
+
+      if (targetPage === this.currentPage) {
+        return `${baseClass} active`;
+      } else {
+        return baseClass;
+      }
+    },
+    getButtonAriaCurrent(targetPage: string): string {
+      if (targetPage === this.currentPage) {
+        return "page";
+      } else {
+        return "false";
+      }
+    },
   },
   computed: {
     navbarContentClasses() {
@@ -242,6 +228,12 @@ export default defineComponent({
       path: window.location.pathname,
       isNavShowing: false,
     };
+  },
+  props: {
+    currentPage: {
+      type: String,
+      default: "",
+    },
   },
 });
 </script>
