@@ -168,6 +168,25 @@ div.navbar li.nav-item {
     height: 100vh;
 }
 
+.tz-cover-portrait {
+    min-width: 5em;
+    max-width: 100%;
+    height: auto;
+}
+
+#homeIntroCoverPortrait img {
+    max-height: 15em;
+    width: auto;
+}
+
+#homeIntroCoverBrief {
+
+}
+
+.big-text {
+    font-size: 3.5rem;
+}
+
 html {
     scroll-behavior: smooth;
 }
