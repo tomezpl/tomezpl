@@ -85,7 +85,7 @@ div.navbar li.nav-item {
 
 .btn-tznav {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
-    @include border-radius(0.8rem);
+    @include border-radius(0.3rem);
     @include gradient-directional(rgba(tint-color($color-roseypink, 45%), 0.7), rgba(tint-color($color-strongpurple, 10%), 0.7), -150deg);
     &:hover {
         @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -150deg);
@@ -125,7 +125,7 @@ div.navbar li.nav-item {
     height: 3.5rem;
     width: 4rem;
     font-size: 2rem;
-    @include border-radius(0.8rem);
+    @include border-radius(0.5rem);
     z-index: 1021;
     color: $light;
 }
