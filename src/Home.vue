@@ -13,7 +13,7 @@
       id="homeIntroCoverBrief"
     >
       <img class="float-end ms-3" style="max-height: 15rem; min-height: 8rem" src="./assets/glowy_portrait.png"/>
-      <h1>Tomasz Zając</h1>
+      <h1 class="big-text">Tomasz Zając</h1>
       <h4>
         An experienced, self-motivated software developer, with a wide array of
         skills ranging from Web API programming to implementing
