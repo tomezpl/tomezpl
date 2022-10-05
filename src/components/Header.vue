@@ -74,7 +74,7 @@
     <nav :class="navbarContentClasses" id="navbarContent">
       <div class="d-flex flex-column h-100">
         <div class="mb-5">
-          <ul class="navbar-nav mb-2 mb-md-0">
+          <ul class="navbar-nav mb-2 mb-md-0 vertical-navbar-widthfix">
             <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
               <a
                 :class="getButtonClass('home')"
