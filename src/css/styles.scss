@@ -57,12 +57,15 @@ $utilities: map-merge(
     background: linear-gradient(to bottom, shade-color($color-purple, 50%), shade-color($color-lightrosey, 90%));
 }
 
+$oddPostColour: mix(shade-color($color-purple, 60%), $color-lightrosey, 75%);
+$evenPostColour: shade-color($color-violet, 65%); 
+
 .main-page-content:nth-child(odd) {
-    background: rgba(shade-color($color-roseypink, 90%), 0.3);
+    background: $oddPostColour;
 }
 
 .main-page-content:nth-child(even) {
-    background: rgba(shade-color($color-violet, 65%), 0.3);
+    background: $evenPostColour;
 }
 
 .home-intro-cover {
@@ -175,8 +178,16 @@ div.navbar li.nav-item {
 }
 
 #homeIntroCoverPortrait img {
-    max-height: 15em;
-    width: auto;
+    width: 100%;
+}
+
+#homeIntroCoverPortrait {
+    min-width: 10rem;
+    min-height: 14rem;
+    height: auto;
+    box-shadow: inset 12px -6px 18px 12px $oddPostColour;
+    background-image: url('./assets/glowy_portrait.png');
+    background-size: cover;
 }
 
 #homeIntroCoverBrief {
