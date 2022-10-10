@@ -1,13 +1,7 @@
 <template>
   <div class="col-12 main-page-content p-1 p-sm-4 home-intro-cover">
     <div class="text-light p-2 clearfix" id="homeIntroCoverBrief">
-      <div class="float-end ms-3" id="homeIntroCoverPortrait">
-        <!--<img
-          class="float-end ms-3"
-          id="homeIntroCoverPortrait"
-          src="./assets/glowy_portrait.png"
-        />-->
-      </div>
+      <div class="float-end ms-3" id="homeIntroCoverPortrait" />
       <h1 class="big-text">Tomasz Zając</h1>
       <h4>
         An experienced, self-motivated software developer, with a wide array of
