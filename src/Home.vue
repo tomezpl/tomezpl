@@ -21,9 +21,12 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+@import "./css/home.scss";
+</style>
+
 <script lang="ts">
 import { defineComponent } from "vue";
-import "./css/home.scss";
 
 export default defineComponent({
   name: "Home",

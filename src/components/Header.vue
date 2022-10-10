@@ -177,6 +177,10 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+@import '../css/header.scss';
+</style>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 
