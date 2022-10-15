@@ -2,6 +2,7 @@
 
 import { createApp, VNode, h, DefineComponent } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@popperjs/core';
 import 'bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
