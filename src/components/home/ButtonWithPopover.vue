@@ -4,6 +4,7 @@
     data-bs-toggle="popover"
     :title="popoverTitle"
     :data-bs-content="popoverText"
+    data-bs-custom-class="tech-experience-popover"
     data-bs-trigger="manual"
     container="body"
     type="button"
