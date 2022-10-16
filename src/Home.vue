@@ -5,9 +5,7 @@
       <h1 class="big-text">Tomasz Zając</h1>
       <h3>An experienced, self-motivated software developer</h3>
       <p class="fs-5">
-        4 years of professional experience developing a variety of innovative
-        digital services and maintaining large legacy codebases to support
-        ongoing key business operations.
+        4 years of professional experience developing, maintaining and providing support on a variety of enterprise-grade Web services.
       </p>
     </div>
   </div>
@@ -26,6 +24,11 @@
             open-source technologies, while also interfacing with
             proprietary/enterprise infrastructure to deliver services.
           </p>
+          <p class="fs-5 pe-3">
+            In my career, I have been responsible for not only developing new, innovative solutions,
+            such as conversational chatbots and interactive navigation guides, but also maintaining legacy systems supporting key business operations
+            and developing processes scalable to large volumes of data.
+          </p>
         </div>
         <div
           class="
@@ -39,19 +42,8 @@
           "
           role="group"
         >
+          <ButtonWithPopover :key="key" v-for="(tech, key) in techExperience" :popover-title="tech.title" :popover-text="tech.brief" :icon="tech.icon"></ButtonWithPopover>
           <!-- Web technologies will go here -->
-          <!-- ASP .NET Core -->
-          <ButtonWithPopover popover-title=".NET Core" :popover-text="techExperience['dotnet']" :img-src="require('./assets/NET_Core_Logo.png')" />
-          <!-- Vue.js -->
-          <ButtonWithPopover popover-title="Vue.js" :popover-text="techExperience['vue']" :img-src="require('./assets/512px-Vue.js_Logo_2.png')" />
-          <!-- Bootstrap -->
-          <ButtonWithPopover popover-title="Bootstrap" :popover-text="techExperience['bootstrap']" :img-src="require('./assets/Bootstrap_logo.png')" />
-          <!-- React JSX -->
-          <ButtonWithPopover popover-title="Testing" :popover-text="techExperience['unit-testing']"><div class="mx-auto"><i class="bi bi-list-check"></i></div></ButtonWithPopover>
-          <!-- Azure -->
-          <ButtonWithPopover popover-title="Azure" :popover-text="techExperience['azure']" :img-src="require('./assets/azure.png')" />
-          <!-- AI -->
-          <ButtonWithPopover popover-title="Conversational AI" :popover-text="techExperience['chatbot']"><div class="mx-auto"><i class="bi bi-robot"></i></div></ButtonWithPopover>
         </div>
       </div>
       <p class="fs-5">
@@ -78,7 +70,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 import ButtonWithPopover from "./components/home/ButtonWithPopover.vue";
 
 export default defineComponent({
@@ -92,15 +84,40 @@ export default defineComponent({
     },
     techExperience() {
       return {
-        dotnet: '4 years using .NET Core in a professional capacity',
-        vue: '4 years using Vue.js in a professional capacity. Familiar with Vue 2.x, 3.x, JSX syntax, Vue CLI and TypeScript API.',
-        bootstrap: '4 years using Bootstrap in a professional capacity. Solid working knowledge of the layout system and core components, as well as SCSS customization and extending functionality with custom code.',
-        'unit-testing': '2 years\' experience writing manual tests, unit tests using Xunit (C#) & GoogleTest (C++) as well as automated Web UI tests using Playwright.',
-        azure: `3 years' experience with using the Microsoft Azure platform. Knowledgeable about common tasks such as configuring & deploying app services, debugging deployed code, etc.
+        dotnet: {
+          title: '.NET Core',
+          brief: '4 years using .NET Core in a professional capacity',
+          icon: require('./assets/NET_Core_Logo.png')
+        },
+        vue: {
+          title: 'Vue.js',
+          brief: '4 years using Vue.js in a professional capacity. Familiar with Vue 2.x, 3.x, JSX syntax, Vue CLI and TypeScript API.',
+          icon: require('./assets/512px-Vue.js_Logo_2.png')
+        },
+        bootstrap: {
+          title: 'Bootstrap',
+          brief: '4 years using Bootstrap in a professional capacity. Solid working knowledge of the layout system and core components, as well as SCSS customization and extending functionality with custom code.',
+          icon: require('./assets/Bootstrap_logo.png')
+        },
+        'unit-testing': {
+          title: 'Testing',
+          brief: '2 years\' experience writing manual tests, unit tests using Xunit (C#) & GoogleTest (C++) as well as automated Web UI tests using Playwright.',
+          img: null,
+          icon: () => '<div class="mx-auto"><i class="bi bi-list-check" /></div>'
+        },
+        azure: {
+          title: 'Azure',
+          brief: `3 years' experience with using the Microsoft Azure platform. Knowledgeable about common tasks such as configuring & deploying app services, debugging deployed code, etc.
         Familiar with the Azure DevOps platform, Git workflow, Continuous Testing, Azure Pipelines and Azure Artifacts.`,
-        chatbot: '4 years of experience developing conversational AI services (chat bots). Solid working knowledge of Microsoft\'s Bot Framework, Bot Builder SDK, Composer, as well as Natural Language Processing solutions such as Microsoft LUIS. Basic familiarity with machine learning concepts.'
+          icon: require('./assets/azure.png')
+        },
+        chatbot: { 
+          title: 'Conversational AI',
+          brief: '4 years of experience developing conversational AI services (chat bots). Solid working knowledge of Microsoft\'s Bot Framework, Bot Builder SDK, Composer, as well as Natural Language Processing solutions such as Microsoft LUIS. Basic familiarity with machine learning concepts.',
+          icon: () => '<div class="mx-auto"><i class="bi bi-robot" /></div>'
+        }
       };
     }
-  },
+  }
 });
 </script>

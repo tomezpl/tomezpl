@@ -6,7 +6,6 @@
     :data-bs-content="popoverText"
     data-bs-custom-class="tech-experience-popover"
     data-bs-trigger="manual"
-    container="body"
     type="button"
     class="btn flex-fill bg-gradient"
     :onmouseout="mouseLeftPopover"
@@ -14,23 +13,19 @@
     :onfocus="focusPopover"
     :onmouseover="showPopover"
   >
-    <slot v-if="imgSrc === null || imgSrc === undefined" :onmouseover="showPopover"></slot>
-    <img v-else :src="imgSrc" :onmouseover="showPopover" />
+    <div class="w-100" v-if="iconIsCustomFunction" v-html="icon()" />
+    <img v-else :src="icon" :onmouseover="showPopover" />
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { Popover } from 'bootstrap';
-import { hide } from "@popperjs/core";
+import { defineComponent } from "vue";
+import { Popover } from "bootstrap";
 
 export default defineComponent({
   name: "ButtonWithPopover",
   props: {
-    imgSrc: {
-      type: String,
-      default: null,
-    },
+    icon: null,
     popoverTitle: {
       type: String,
       default: null,
@@ -42,34 +37,53 @@ export default defineComponent({
   },
   data: () => ({
     popover: {},
-    focused: false
+    focused: false,
+    hidden: true
   }),
+  computed: {
+    iconIsCustomFunction() : boolean {
+      return this.icon instanceof Function;
+    }
+  },
   methods: {
     blurPopover() {
-        this.focused = false;
-        this.hidePopover();
+      this.focused = false;
+      this.hidePopover();
     },
     focusPopover() {
-        this.focused = true;
-        this.showPopover();
+      this.focused = true;
+      this.showPopover();
     },
     mouseLeftPopover(ev: MouseEvent) {
-        // Ignore mouseout for child nodes.
-        if((ev.relatedTarget as Node === this.$refs.btn as HTMLButtonElement) || ((this.$refs.btn as HTMLButtonElement).contains(ev.relatedTarget as Node) === false)) {
-            this.hidePopover();
-        } 
+      console.log(ev);
+      // Ignore mouseout for child nodes.
+      if (
+        (ev.target as Node) === (this.$refs.btn as HTMLButtonElement) &&
+        (this.$refs.btn as HTMLButtonElement).contains(
+          ev.relatedTarget as Node
+        ) === false
+      ) {
+        this.hidePopover();
+      }
     },
     hidePopover() {
-        if(this.focused === false) {
-            (this.popover as Popover).hide();
-        }
+      if (this.focused === false) {
+        this.focused = false;
+        console.log('hide');
+        (this.popover as Popover).hide();
+        this.hidden = true;
+      }
     },
     showPopover() {
+      console.log('show');
+      if(this.hidden === true) {
         (this.popover as Popover).show();
-    }
+        this.hidden = false;
+      }
+    },
   },
   mounted() {
     this.popover = new Popover(this.$refs.btn as HTMLButtonElement);
-  }
+  },
 });
 </script>
