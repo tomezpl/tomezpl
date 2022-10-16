@@ -90,3 +90,8 @@ div.navbar li.nav-item {
 .tz-navbar-shown {
     transform: translateX(0%);
 }
+
+.hide {
+    width: 0;
+    transition: width 0.15s ease;
+}

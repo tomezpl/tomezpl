@@ -69,7 +69,7 @@
     </div>
   </div>
   <div
-    class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed"
+    :class="sideBarContainerClass"
   >
     <nav :class="navbarContentClasses" id="navbarContent">
       <div class="d-flex flex-column h-100">
@@ -226,6 +226,15 @@ export default defineComponent({
       }
       return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
     },
+    sideBarContainerClass() {
+      const baseClass = 'col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed';
+      if(this.isNavShowing !== true) {
+        return `${baseClass} hide`;
+      }
+      else {
+        return baseClass;
+      }
+    }
   },
   data() {
     return {
