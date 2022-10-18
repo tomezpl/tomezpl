@@ -33,29 +33,28 @@ export default defineComponent({
     popoverText: {
       type: String,
       default: null,
-    }
+    },
   },
   data: () => ({
     popover: {},
     focused: false,
-    hidden: true
+    hidden: true,
   }),
   computed: {
-    iconIsCustomFunction() : boolean {
+    iconIsCustomFunction(): boolean {
       return this.icon instanceof Function;
-    }
+    },
   },
   methods: {
     blurPopover() {
       this.focused = false;
-      this.hidePopover();
+      this.hidePopover(true);
     },
     focusPopover() {
       this.focused = true;
-      this.showPopover();
+      this.showPopover(true);
     },
     mouseLeftPopover(ev: MouseEvent) {
-      console.log(ev);
       // Ignore mouseout for child nodes.
       if (
         (ev.target as Node) === (this.$refs.btn as HTMLButtonElement) &&
@@ -66,17 +65,15 @@ export default defineComponent({
         this.hidePopover();
       }
     },
-    hidePopover() {
-      if (this.focused === false) {
+    hidePopover(force = false) {
+      if (this.focused === false || force === true) {
         this.focused = false;
-        console.log('hide');
         (this.popover as Popover).hide();
         this.hidden = true;
       }
     },
-    showPopover() {
-      console.log('show');
-      if(this.hidden === true) {
+    showPopover(force = false) {
+      if (this.hidden === true || force === true) {
         (this.popover as Popover).show();
         this.hidden = false;
       }
