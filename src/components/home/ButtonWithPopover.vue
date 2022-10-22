@@ -43,7 +43,7 @@ export default defineComponent({
   computed: {
     iconIsCustomFunction(): boolean {
       return this.icon instanceof Function;
-    },
+    }
   },
   methods: {
     blurPopover() {

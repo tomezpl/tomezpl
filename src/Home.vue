@@ -88,6 +88,7 @@
           dynamics required for physics and gameplay programming.
         </p>
       </div>
+      <PortfolioCarousel class="col-12" :products="portfolio" />
     </div>
   </div>
   <div :class="coverPageBlockClass">
@@ -109,12 +110,27 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ButtonWithPopover from "./components/home/ButtonWithPopover.vue";
+import PortfolioCarousel from "./components/shared/PortfolioCarousel.vue";
+import { ProductSlide } from "./types/ProductSlide";
 
 export default defineComponent({
   components: {
     ButtonWithPopover,
+    PortfolioCarousel,
   },
   name: "Home",
+  data: () => ({
+    portfolio: [
+      new ProductSlide(
+        "Navigate-Me",
+        new Array<string>(
+          require("./assets/portfolio/professional/navigateme.png"),
+          require("./assets/portfolio/professional/navigateme2.png")
+        ),
+        "Navigate-Me is a campus navigation system I helped develop and maintain for over 4 years."
+      ),
+    ],
+  }),
   computed: {
     coverPageBlockClass() {
       return "col-12 main-page-content p-1 p-sm-4 home-intro-cover";
@@ -187,6 +203,11 @@ export default defineComponent({
           icon: require("./assets/physx.png"),
         },
       };
+    },
+    portfolioImages(): any {
+      return Object.values(this.portfolio).map(
+        (portfolioEntry: any) => portfolioEntry.img
+      );
     },
   },
 });
