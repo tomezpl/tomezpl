@@ -1,0 +1,26 @@
+.tz-portfolio-product-slide-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.tz-portfolio-product-slide-image > div {
+    background-image: inherit;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(10px);
+}
+
+.tz-portfolio-product-slide-image-button.float-start {
+    background-image: linear-gradient(to right, rgba(violet, 0.5), rgba(blue, 0.0));
+}
+
+.tz-portfolio-product-slide-image-button.float-end {
+    background-image: linear-gradient(to left, rgba(violet, 0.5), rgba(blue, 0.0));
+}
+
+.tz-portfolio-product-slide-image-button > div i {
+    font-size: 3em;
+    text-shadow: 0px 0px 5px black;
+}

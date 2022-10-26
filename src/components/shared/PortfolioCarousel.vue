@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <div ref="portfolioCarousel" id="portfolioCarousel" class="col-12">
+    <div ref="portfolioCarousel" id="portfolioCarousel" class="col-12 carousel slide">
       <div class="carousel-inner">
         <div
           v-for="n in products.length"
@@ -8,65 +8,9 @@
           class="carousel-item"
           :key="n - 1"
         >
-          <div :ref="`portfolioCarouselProduct${n-1}`" :id="`portfolioCarouselProduct${n-1}`" class="col-7">
-            <div class="carousel-inner">
-              <div
-                :ref="`product${n - 1}_slide${m - 1}`"
-                v-for="m in getProduct(n - 1).images.length"
-                :key="m - 1"
-                class="carousel-item"
-              >
-                <img
-                  :src="getCarouselSlideImage(n - 1, m - 1)"
-                  class="d-block w-100"
-                />
-              </div>
-            </div>
-            <a
-        class="carousel-control-prev"
-        :data-bs-target="`#portfolioCarouselProduct${n-1}`"
-        role="button"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        :data-bs-target="`#portfolioCarouselProduct${n-1}`"
-        role="button"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-          </div>
-          <div class="col-5">
-            <h1>{{ getProduct(n - 1).title }}</h1>
-            <p>
-              {{ getProduct(n - 1).brief }}
-            </p>
-          </div>
+          <ProductCarousel :id="`portfolioCarouselProduct${n - 1}`" :ref="`portfolioCarouselProduct${n - 1}`" :product="getProduct(n-1)" />
         </div>
       </div>
-      <a
-        class="carousel-control-prev"
-        data-bs-target="#portfolioCarousel"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        data-bs-target="#portfolioCarousel"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
   </div>
 </template>
@@ -74,9 +18,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ProductSlide } from "../../types/ProductSlide";
+import ProductCarousel from "./PortfolioCarousel/ProductCarousel.vue";
 
 export default defineComponent({
   name: "PortfolioCarousel",
+  components: {
+    ProductCarousel
+  },
   props: {
     products: {
       type: Array,
@@ -98,14 +46,15 @@ export default defineComponent({
   }),
   mounted() {
     console.log(this.$refs);
-    this.products.forEach((val, productIndex) => {
+    /*this.products.forEach((val, productIndex) => {
       (val as ProductSlide).images.forEach((val, slideIndex) => {
-        (this.$refs[`product${productIndex}_slide${slideIndex}`] as HTMLElement).addEventListener(
+        const currentImageSlide = this.$refs[`product${productIndex}_slide${slideIndex}`] as HTMLElement;
+        currentImageSlide.addEventListener(
           "slid.bs.carousel",
-          () => {this.currentSlide = slideIndex; this.currentProduct = productIndex; }
+          () => {this.currentSlide = slideIndex; this.currentProduct = productIndex; currentImageSlide }
         );
       });
-    });
+    });*/
     const firstProduct = this.$refs["product0"];
     console.log(firstProduct);
     if (firstProduct !== null && firstProduct !== undefined) {
@@ -115,13 +64,6 @@ export default defineComponent({
       }
       (firstProduct as HTMLElement).classList.add("active");
     }
-
-    (this.$refs.portfolioCarousel as HTMLElement).classList.add('carousel', 'slide');
-    (this.$refs.portfolioCarousel as HTMLElement).setAttribute('data-bs-ride', 'carousel');
-    this.products.forEach((val, index) => {
-      (this.$refs[`portfolioCarouselProduct${index}`] as HTMLElement).classList.add('carousel', 'slide');
-      (this.$refs[`portfolioCarouselProduct${index}`] as HTMLElement).setAttribute('data-bs-ride', 'carousel');
-    });
   },
   methods: {
     getCarouselSlideClass(productIndex = -1, slideIndex = -1) {

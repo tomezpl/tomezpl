@@ -128,7 +128,7 @@ export default defineComponent({
           require("./assets/portfolio/professional/navigateme2.png")
         ),
         "Navigate-Me is a campus navigation system I helped develop and maintain for over 4 years."
-      ),
+      )
     ],
   }),
   computed: {
