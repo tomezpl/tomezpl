@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-sm-7 carousel slide d-inline-block h-100" ref="carousel">
+  <div class="col-12 col-md-8 carousel slide d-inline-block h-100" ref="carousel">
     <div class="carousel-inner">
       <div
         v-for="n in product.images.length"
@@ -26,7 +26,7 @@
                 <a href="#" @click="prevImageSlide">
                   <i
                     :class="`bi ${prevButtonIcon} text-light`"
-                    @mouseenter="() => switchPrevButtonHover(true)"
+                    @mouseover="() => switchPrevButtonHover(true)"
                     @mouseleave="() => switchPrevButtonHover(false)"
                   ></i>
                 </a>
@@ -46,7 +46,7 @@
                 <a href="#" @click="nextImageSlide">
                   <i
                     :class="`bi ${nextButtonIcon} text-light`"
-                    @mouseenter="() => switchNextButtonHover(true)"
+                    @mouseover="() => switchNextButtonHover(true)"
                     @mouseleave="() => switchNextButtonHover(false)"
                   ></i>
                 </a>
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class="col-12 col-sm-5 d-inline-block ps-3 align-top">
+  <div class="col-12 col-md-4 d-inline-block ps-3 align-top">
     <h1>{{ product.title }}</h1>
     <p>
       {{ product.brief }}
