@@ -61,7 +61,8 @@ $utilities: map-merge(
 @import "~bootstrap/scss/bootstrap";
 
 .big-text {
-    font-size: 4rem;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 html {

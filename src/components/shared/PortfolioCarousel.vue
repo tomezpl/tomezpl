@@ -5,7 +5,7 @@
         <div
           v-for="n in products.length"
           :ref="`product${n - 1}`"
-          class="carousel-item"
+          class="carousel-item h-100"
           :key="n - 1"
         >
           <ProductCarousel :id="`portfolioCarouselProduct${n - 1}`" :ref="`portfolioCarouselProduct${n - 1}`" :product="getProduct(n-1)" />

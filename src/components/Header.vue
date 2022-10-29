@@ -35,7 +35,7 @@
 -->
 
 <template>
-  <div class="row sticky-top">
+  <div class="row sticky-top m-0">
     <div
       class="
         navbar
@@ -46,7 +46,7 @@
         border-2 border-bottom border-lightpink
       "
     >
-      <div class="col-2">
+      <div class="col-3">
         <button
           class="navbar-toggler ms-1"
           type="button"
@@ -56,10 +56,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="col-8 text-center">
+      <div class="col-6 text-center">
         <img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" />
       </div>
-      <div class="navbar-brand col-2 me-0 mb-0 py-0">
+      <div class="navbar-brand col-3 me-0 mb-0 py-0">
         <div class="py-2">
           <span class="w-100 mx-auto d-block text-center fs-4">
             <slot></slot>
@@ -227,7 +227,7 @@ export default defineComponent({
       return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
     },
     sideBarContainerClass() {
-      const baseClass = 'col-7 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed';
+      const baseClass = 'col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed';
       if(this.isNavShowing !== true) {
         return `${baseClass} hide`;
       }

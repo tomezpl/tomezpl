@@ -1,9 +1,10 @@
 <template>
   <div :class="coverPageBlockClass">
     <div class="text-light p-2 clearfix" id="homeIntroCoverBrief">
-      <div class="float-end ms-3" id="homeIntroCoverPortrait" />
-      <h1 class="big-text">Tomasz Zając</h1>
+      <h1 class="big-text d-inline-block"><span>Tomasz Zając</span></h1>
+      <div class="float-end ms-0 ms-sm-3" id="homeIntroCoverPortrait" />
       <h3>An experienced, self-motivated software developer</h3>
+      <hr />
       <p class="fs-5">
         4 years of professional experience developing, maintaining and providing
         support on a variety of enterprise-grade Web services.
@@ -133,7 +134,7 @@ export default defineComponent({
   }),
   computed: {
     coverPageBlockClass() {
-      return "col-12 main-page-content p-1 p-sm-4 home-intro-cover";
+      return "col-12 main-page-content p-0 p-sm-4 home-intro-cover";
     },
     techExperience() {
       return {

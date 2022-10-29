@@ -48,6 +48,7 @@ $evenPostColour: shade-color($color-violet, 65%);
 }
 
 .home-intro-cover-tech {
+    min-width: 2.5em;
     box-shadow: 0px 0px 10px 5px inset shade-color($color-roseypink, 30%);
 }
 
@@ -56,6 +57,8 @@ $evenPostColour: shade-color($color-violet, 65%);
     @include button-variant(rgba(shade-color($color-lightrosey, 30%), 0.5), rgba(shade-color($color-roseypink, 30%), 0.7));
 
     padding: 0.2em;
+
+    min-width: 2.5em;
 
     img, div {
         min-width: 1.5em;

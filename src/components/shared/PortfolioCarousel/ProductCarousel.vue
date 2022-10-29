@@ -1,5 +1,5 @@
 <template>
-  <div class="col-7 carousel slide d-inline-block" ref="carousel">
+  <div class="col-12 col-sm-7 carousel slide d-inline-block h-100" ref="carousel">
     <div class="carousel-inner">
       <div
         v-for="n in product.images.length"
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class="col-5 d-inline-block ps-3 align-top">
+  <div class="col-12 col-sm-5 d-inline-block ps-3 align-top">
     <h1>{{ product.title }}</h1>
     <p>
       {{ product.brief }}
