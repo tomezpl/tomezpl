@@ -97,6 +97,7 @@ export default defineComponent({
       (this.$refs.slide0 as HTMLElement).className += " active";
     }
     this.carousel = new Carousel(this.$refs.carousel as HTMLDivElement) as any;
+    (this.carousel as any).pause();
   },
   methods: {
     prevImageSlide(ev : Event) {
