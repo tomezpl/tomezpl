@@ -1,11 +1,11 @@
 <template>
-  <div class="col-7 carousel slide d-inline-block">
+  <div class="col-7 carousel slide d-inline-block" ref="carousel">
     <div class="carousel-inner">
       <div
         v-for="n in product.images.length"
         :key="n - 1"
         :ref="`slide${n - 1}`"
-        :class="getCarouselItemClass(n - 1)"
+        class="carousel-item"
       >
         <div
           class="d-block w-100 tz-portfolio-product-slide-image"
@@ -72,6 +72,7 @@
 <script lang="ts">
 import { ProductSlide } from "@/types/ProductSlide";
 import { defineComponent } from "vue";
+import { Carousel } from 'bootstrap';
 
 export default defineComponent({
   name: "ProductCarousel",
@@ -85,29 +86,28 @@ export default defineComponent({
     currentImageSlideIndex: 0,
     prevButtonIcon: "",
     nextButtonIcon: "",
+    carousel: null
   }),
   beforeMount() {
     this.switchNextButtonHover(false);
     this.switchPrevButtonHover(false);
   },
+  mounted() {
+    if(this.$refs.slide0 !== null && this.$refs.slide0 !== undefined) {
+      (this.$refs.slide0 as HTMLElement).className += " active";
+    }
+    this.carousel = new Carousel(this.$refs.carousel as HTMLDivElement) as any;
+  },
   methods: {
     prevImageSlide(ev : Event) {
-      if (--this.currentImageSlideIndex < 0) {
-        this.currentImageSlideIndex = this.product.images.length - 1;
-      }
-      
-      if(ev !== undefined && ev !== null) {
+      (this.carousel as any).prev();
+      (this.carousel as any).pause();
         ev.preventDefault();
-      }
     },
     nextImageSlide(ev : Event) {
-      if (++this.currentImageSlideIndex >= this.product.images.length) {
-        this.currentImageSlideIndex = 0;
-      }
-
-      if(ev !== undefined && ev !== null) {
+      (this.carousel as any).next();
+      (this.carousel as any).pause();
         ev.preventDefault();
-      }
     },
     getCarouselItemClass(imageIndex: number) {
       let baseClass = "carousel-item";
