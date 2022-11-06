@@ -48,7 +48,7 @@
         >
           <ButtonWithPopover
             :key="key"
-            v-for="(tech, key) in techExperience"
+            v-for="(tech, key) in webTechExperience"
             :popover-title="tech.title"
             :popover-text="tech.brief"
             :icon="tech.icon"
@@ -121,12 +121,15 @@ import { defineComponent } from "vue";
 import ButtonWithPopover from "./components/home/ButtonWithPopover.vue";
 import PortfolioCarousel from "./components/shared/PortfolioCarousel.vue";
 import { ProductSlide } from "./types/ProductSlide";
+import {gameTechExperience} from "./mixins/data/game_tech_experience";
+import {webTechExperience} from "./mixins/data/web_tech_experience";
 
 export default defineComponent({
   components: {
     ButtonWithPopover,
     PortfolioCarousel,
   },
+  mixins: [gameTechExperience, webTechExperience],
   name: "Home",
   data: () => ({
     portfolio: [
@@ -146,75 +149,6 @@ export default defineComponent({
   computed: {
     coverPageBlockClass() {
       return "col-12 main-page-content py-4 px-0 px-md-4 home-intro-cover";
-    },
-    techExperience() {
-      return {
-        dotnet: {
-          title: ".NET Core",
-          brief: "4 years using .NET Core in a professional capacity",
-          icon: require("./assets/NET_Core_Logo.png"),
-        },
-        vue: {
-          title: "Vue.js",
-          brief:
-            "4 years using Vue.js in a professional capacity. Familiar with Vue 2.x, 3.x, JSX syntax, Vue CLI and TypeScript API.",
-          icon: require("./assets/512px-Vue.js_Logo_2.png"),
-        },
-        bootstrap: {
-          title: "Bootstrap",
-          brief:
-            "4 years using Bootstrap in a professional capacity. Solid working knowledge of the layout system and core components, as well as SCSS customization and extending functionality with custom code.",
-          icon: require("./assets/Bootstrap_logo.png"),
-        },
-        "unit-testing": {
-          title: "Testing",
-          brief:
-            "2 years' experience writing manual tests, unit tests using Xunit (C#) & GoogleTest (C++) as well as automated Web UI tests using Playwright.",
-          img: null,
-          icon: () =>
-            '<div class="mx-auto"><i class="bi bi-list-check" /></div>',
-        },
-        azure: {
-          title: "Azure",
-          brief: `3 years' experience with using the Microsoft Azure platform. Knowledgeable about common tasks such as configuring & deploying app services, debugging deployed code, etc.
-        Familiar with the Azure DevOps platform, Git workflow, Continuous Testing, Azure Pipelines and Azure Artifacts.`,
-          icon: require("./assets/azure.png"),
-        },
-        chatbot: {
-          title: "Conversational AI",
-          brief:
-            "4 years of experience developing conversational AI services (chat bots). Solid working knowledge of Microsoft's Bot Framework, Bot Builder SDK, Composer, as well as Natural Language Processing solutions such as Microsoft LUIS. Basic familiarity with machine learning concepts.",
-          icon: () => '<div class="mx-auto"><i class="bi bi-robot" /></div>',
-        },
-      };
-    },
-    gameTechExperience() {
-      return {
-        unreal: {
-          title: "Unreal Engine",
-          brief:
-            "1 year of using Unreal Engine 4 and 5 for small personal game projects. Familiar with both C++ and Blueprint programming, as well as basics of setting up scene lighting using Lumen.",
-          icon: require("./assets/ue.png"),
-        },
-        unity: {
-          title: "Unity",
-          brief: `Familiar with using the Unity engine, having used it on-and-off since 2013, including 1 year spent on developing a small multiplayer game to completion.
-          Familiar with C# programming, Photon & Netcode for GameObjects, Universal Render Pipeline, Shader Graph and HLSL.`,
-          icon: require("./assets/unityLogo.png"),
-        },
-        opengl: {
-          title: "OpenGL",
-          brief:
-            "Familiar with creating basic 3D renderers using the modern OpenGL spec using C++ for host code, writing GLSL shaders for simple lighting models (Gouraud, Phong), and debugging using ImGui and RenderDoc.",
-          icon: require("./assets/opengl.png"),
-        },
-        physx: {
-          title: "PhysX",
-          brief:
-            "Working knowledge of the NVIDIA PhysX C++ SDK. As part of University project, produced a small 3D pinball game making use of various collider types, different material properties (restitution/friction coefficients) to serve gameplay purposes, and integrated simulation with a basic OpenGL scene graph.",
-          icon: require("./assets/physx.png"),
-        },
-      };
     },
     portfolioImages(): any {
       return Object.values(this.portfolio).map(
