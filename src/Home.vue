@@ -128,7 +128,10 @@ export default defineComponent({
           require("./assets/portfolio/professional/navigateme.png"),
           require("./assets/portfolio/professional/navigateme2.png")
         ),
-        "Navigate-Me is a campus navigation system I helped develop and maintain for over 4 years."
+        [
+          "Navigate-Me is a campus navigation system I helped develop and maintain for over 4 years.\nI have joined the project close to its release, so my involvement was primarily to keep the system's maps up to date and adapt to new requirements over time (e.g. special maps to support social distancing measures during the COVID-19 outbreak).",
+          "In addition to maintaining and improving the project's codebase, I was tasked with creating map data for the University campus."
+        ]
       )
     ],
   }),

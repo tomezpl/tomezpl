@@ -59,8 +59,8 @@
   </div>
   <div class="col-12 col-md-4 d-inline-block ps-3 align-top">
     <h1>{{ product.title }}</h1>
-    <p>
-      {{ product.brief }}
+    <p v-for="brief in currentBriefParagraphs" :key="brief">
+      {{ brief }}
     </p>
   </div>
 </template>
@@ -98,17 +98,26 @@ export default defineComponent({
     }
     this.carousel = new Carousel(this.$refs.carousel as HTMLDivElement) as any;
     (this.carousel as any).pause();
+
+    (this.$refs.carousel as HTMLElement).addEventListener('slid.bs.carousel', (ev) => {this.currentImageSlideIndex = (ev as any).to; });
+  },
+  computed: {
+    currentBriefParagraphs() : Array<string> {
+      return this.product.brief[Math.min(this.currentImageSlideIndex, this.product.images.length - 1)].split('\n');
+    }
   },
   methods: {
     prevImageSlide(ev : Event) {
       (this.carousel as any).prev();
       (this.carousel as any).pause();
-        ev.preventDefault();
+
+      ev.preventDefault();
     },
     nextImageSlide(ev : Event) {
       (this.carousel as any).next();
       (this.carousel as any).pause();
-        ev.preventDefault();
+      
+      ev.preventDefault();
     },
     getCarouselItemClass(imageIndex: number) {
       let baseClass = "carousel-item";

@@ -96,7 +96,7 @@ export default defineComponent({
       ) {
         return this.products[productIndex] as ProductSlide;
       } else {
-        return new ProductSlide("", [], "");
+        return new ProductSlide("", [], []);
       }
     },
   },
