@@ -1,10 +1,11 @@
 <template>
   <div class="container-fluid p-0">
-    <Header :currentPage="internalName">{{pageTitle}}</Header>
+    <Header @set-sidebar-showing="setSidebarShowing" :currentPage="internalName">{{pageTitle}}</Header>
+    <SideBar :show="isSideBarShowing" :currentPage="internalName" />
     <div class="row min-vh-100 side-bg pt-5 tz-brand-border m-0">
-      <div class="col-md-2 col-sm-1 d-sm-block d-none" />
-      <div class="col-md-8 col-sm-10 col-12 px-0 px-sm-1 px-lg-2"><slot></slot></div>
-      <div class="col-md-2 col-sm-1 d-sm-block d-none" />
+      <div class="col-lg-1 d-lg-block d-none" />
+      <div class="col-lg-10 col-md-12 px-0 px-1 px--2"><slot></slot></div>
+      <div class="col-lg-1 d-lg-block d-none" />
     </div>
   </div>
 </template>
@@ -16,11 +17,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "./components/Header.vue";
+import SideBar from "./components/SideBar.vue";
 
 export default defineComponent({
   name: "MasterLayout",
   components: {
     Header,
+    SideBar
   },
   props: {
     pageTitle: {
@@ -30,6 +33,15 @@ export default defineComponent({
     internalName: {
       type: String,
       default: ''
+    }
+  },
+  data: () => ({
+    isSideBarShowing: false
+  }),
+  methods: {
+    setSidebarShowing(isShowing : boolean) {
+      console.log(isShowing);
+      this.isSideBarShowing = isShowing;
     }
   }
 });
