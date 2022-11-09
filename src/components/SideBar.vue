@@ -1,7 +1,7 @@
 <template>
   <div :class="sideBarContainerClass">
     <nav :class="navbarContentClasses" id="navbarContent">
-      <div class="d-flex flex-column h-100">
+      <div class="d-flex flex-column h-100 pt-5">
         <div class="mb-5">
           <ul class="navbar-nav mb-2 mb-md-0 vertical-navbar-widthfix">
             <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
@@ -154,11 +154,11 @@ export default defineComponent({
       if (this.show === true) {
         classToApply = "tz-navbar-shown";
       }
-      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
+      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto pt-5`;
     },
     sideBarContainerClass() {
       const baseClass =
-        "col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 position-fixed";
+        "col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 fixed-top start-0";
       if (this.show !== true) {
         return `${baseClass} hide`;
       } else {
