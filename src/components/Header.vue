@@ -35,7 +35,7 @@
 -->
 
 <template>
-  <div class="row fixed-top m-0">
+  <div class="row sticky-top m-0" id="topBar">
     <div
       class="
         navbar

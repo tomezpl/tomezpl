@@ -91,6 +91,10 @@ div.navbar li.nav-item {
     transform: translateX(0%);
 }
 
+#topBar {
+    z-index: 1150;
+}
+
 .hide {
     width: 0;
     transition: width 0.15s ease;
