@@ -4,7 +4,7 @@
     <Header @set-sidebar-showing="setSidebarShowing" :currentPage="internalName">{{pageTitle}}</Header>
     <div class="row min-vh-100 side-bg pt-5 tz-brand-border m-0">
       <div class="col-lg-1 d-lg-block d-none" />
-      <div class="col-lg-10 col-md-12 px-0 px-1 px--2"><slot></slot></div>
+      <div class="col-lg-10 col-md-12 px-0 px-lg-2"><slot></slot></div>
       <div class="col-lg-1 d-lg-block d-none" />
     </div>
   </div>
