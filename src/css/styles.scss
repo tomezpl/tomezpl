@@ -1,5 +1,6 @@
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Rajdhani:wght@500;600&display=swap');
+@use "sass:map";
 
 $color-dark: #333D39;
 $color-turqouise: #4BA399;
@@ -36,7 +37,6 @@ $enable-negative-margins: true;
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
-
 
 $utilities: map-merge(
   $utilities,
@@ -84,9 +84,19 @@ body {
     border-bottom-color: $color-lightrosey!important;
 }
 
+:export {
+    brandGradientBottomColor: $color-roseypink;
+    brandGradientBottomAlpha: 0.7;
+    brandGradientTopColor: $color-violet;
+    brandGradientTopAlpha: 1;
+}
+
+.tz-blur-behind {
+    backdrop-filter: blur(5px);
+}
+
 .tz-brand-gradient {
     background-image: linear-gradient(0deg, rgba($color-roseypink, 0.7), rgba($color-violet, 1));
-    backdrop-filter: blur(5px);
 }
 
 .tz-brand-gradient-sub {

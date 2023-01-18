@@ -1,17 +1,5 @@
 <template>
   <div :class="coverPageBlockClass">
-    <div class="text-light p-2 clearfix" id="homeIntroCoverBrief">
-      <h1 class="big-text d-inline-block"><span>Tomasz Zając</span></h1>
-      <div class="float-end ms-0 ms-sm-3" id="homeIntroCoverPortrait" />
-      <h3>An experienced, self-motivated software developer</h3>
-      <hr />
-      <p class="fs-5">
-        4 years of professional experience developing, maintaining and providing
-        support on a variety of enterprise-grade Web services.
-      </p>
-    </div>
-  </div>
-  <div :class="coverPageBlockClass">
     <div class="text-light p-2">
       <h1>Professional experience</h1>
       <p class="fs-5">
@@ -113,6 +101,10 @@
 </template>
 
 <style lang="scss">
+@import "./css/values.scss";
+@use "sass:map";
+
+$imagePaths: map-merge($imagePaths, ("portrait-image": './assets/portrait.png'));
 @import "./css/home.scss";
 </style>
 

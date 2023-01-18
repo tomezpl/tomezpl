@@ -1,8 +1,21 @@
 <template>
   <div class="container-fluid p-0">
     <SideBar :show="isSideBarShowing" :currentPage="internalName" />
-    <Header @set-sidebar-showing="setSidebarShowing" :currentPage="internalName">{{pageTitle}}</Header>
-    <div class="row min-vh-100 side-bg pt-5 tz-brand-border m-0">
+    <div ref="header">
+      <Header
+        @set-sidebar-showing="setSidebarShowing"
+        :currentPage="internalName"
+        :bg-alpha="currentAlpha"
+      >
+        <div ref="headerSlot"><slot name="headerBody" /></div>
+        <template #currentPageTitle>{{ pageTitle }}</template>
+      </Header>
+    </div>
+    <div
+      id="body"
+      ref="body"
+      class="row min-vh-100 side-bg pt-5 tz-brand-border m-0"
+    >
       <div class="col-lg-1 d-lg-block d-none" />
       <div class="col-lg-10 col-md-12 px-0 px-lg-2"><slot></slot></div>
       <div class="col-lg-1 d-lg-block d-none" />
@@ -10,8 +23,8 @@
   </div>
 </template>
 
-<style lang="scss">
-@import './css/styles.scss';
+<style lang="scss" scoped>
+@import "./css/styles.scss";
 </style>
 
 <script lang="ts">
@@ -23,26 +36,53 @@ export default defineComponent({
   name: "MasterLayout",
   components: {
     Header,
-    SideBar
+    SideBar,
   },
   props: {
     pageTitle: {
       type: String,
-      default: 'Tomasz Zając'
+      default: "Tomasz Zając",
     },
     internalName: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
   data: () => ({
-    isSideBarShowing: false
+    isSideBarShowing: false,
+    currentAlpha: 0,
   }),
   methods: {
-    setSidebarShowing(isShowing : boolean) {
+    setSidebarShowing(isShowing: boolean) {
       console.log(isShowing);
       this.isSideBarShowing = isShowing;
-    }
-  }
+    },
+    getTopBarAlpha(): number {
+      const header =
+        this.$refs.header !== undefined && this.$refs.header !== null
+          ? (this.$refs.header as HTMLElement)
+          : null;
+
+      const headerSlot =
+        this.$refs.headerSlot !== undefined && this.$refs.headerSlot !== null
+          ? (this.$refs.headerSlot as HTMLElement)
+          : null;
+  
+      const headerSlotHeight = headerSlot !== null ? headerSlot.offsetHeight : 1;
+      console.log(headerSlotHeight);
+      const maxOffset =
+        header !== null ? headerSlotHeight : 1;
+      //console.log(`Max offset: ${maxOffset}`);
+
+      return Math.max(0, Math.min(maxOffset, window.scrollY)) / maxOffset;
+    },
+  },
+  mounted() {
+    addEventListener("scroll", (ev) => {
+      //console.log(`${window.scrollY} vs ${(this.$refs.body as HTMLElement).offsetTop}`);
+      //console.log(this.getTopBarAlpha());
+      this.currentAlpha = this.getTopBarAlpha();
+    });
+  },
 });
 </script>

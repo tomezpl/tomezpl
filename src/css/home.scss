@@ -1,5 +1,7 @@
 @import "./styles.scss";
 
+@use "sass:map";
+
 $oddPostColour: mix(shade-color($color-purple, 60%), $color-lightrosey, 75%);
 $evenPostColour: shade-color($color-violet, 65%); 
 
@@ -17,13 +19,12 @@ $evenPostColour: shade-color($color-violet, 65%);
     height: auto;
 }
 
+@debug map-get($imagePaths, 'portrait-image');
+@debug $imagePaths;
+
 #homeIntroCoverPortrait {
-    min-width: 10rem;
-    min-height: 14rem;
-    height: auto;
-    box-shadow: inset 12px -6px 18px 12px $oddPostColour;
-    background-image: url('./assets/glowy_portrait.png');
-    background-size: cover;
+    height: 10em;
+    width: auto;
 }
 
 .main-page-content:first-child {
@@ -42,9 +43,17 @@ $evenPostColour: shade-color($color-violet, 65%);
     border-top: 0.15rem solid $color-lightrosey;
 }
 
+@mixin mainFont() {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.cover-text {
+    @include mainFont();
+}
+
 .home-intro-cover {
     min-height: 12em;
-    font-family: 'Chakra Petch', sans-serif;
+    @include mainFont();
 }
 
 .home-intro-cover-tech {

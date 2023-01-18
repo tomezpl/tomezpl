@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { createApp, VNode, h, DefineComponent } from 'vue';
+import { createApp, VNode, h, DefineComponent, isVNode } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core';
 import 'bootstrap';
@@ -12,16 +12,25 @@ import About from './About.vue'
 import Showcase from './Showcase.vue'
 import Blog from './Blog.vue'
 import MasterLayout from './MasterLayout.vue';
+import Cover from './components/home/Cover.vue';
 
 class PageData {
     ViewComponent: object;
     Title: string;
     InternalName: string;
+    MasterSlots: object;
 
-    constructor(viewComponent: object, title: string, internalName: string) {
+    constructor(viewComponent: object, title: string, internalName: string, masterSlots = {}) {
         this.ViewComponent = viewComponent;
         this.Title = title;
         this.InternalName = internalName;
+
+        if(masterSlots !== null && masterSlots !== undefined && typeof masterSlots === 'object' && Object.values(masterSlots).length > 0) {
+            this.MasterSlots = masterSlots;
+        }
+        else {
+            this.MasterSlots = {};
+        }
     }
 }
 
@@ -36,7 +45,7 @@ createApp({
             switch (this.currentRoute) {
                 case '/index.html':
                 case '/':
-                    return new PageData(Home, 'Welcome', 'home');
+                    return new PageData(Home, 'Welcome', 'home', {headerBody: () => h(Cover)});
                 case '/blog.html':
                     return new PageData(Blog, 'Dev blog', 'blog');
                 case '/about.html':
@@ -50,6 +59,6 @@ createApp({
     },
     render(): VNode {
         const page = this.ViewComponentAndTitle;
-        return h(MasterLayout, {pageTitle: page.Title, internalName: page.InternalName}, () => h(page.ViewComponent));
+        return h(MasterLayout, {pageTitle: page.Title, internalName: page.InternalName}, { default: () => h(page.ViewComponent), ...page.MasterSlots });
     }
 }).mount("#app");
