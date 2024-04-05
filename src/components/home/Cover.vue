@@ -3,7 +3,6 @@
     <div class="w-100 cover-text">
       <div class="text-light p-2 clearfix" id="homeIntroCoverBrief">
         <h1 class="big-text d-inline-block"><span>Tomasz Zając</span></h1>
-        <img class="float-end ms-0 ms-sm-3 rounded-circle" :src="require('../../assets/portrait.png')" id="homeIntroCoverPortrait" />
         <h3>An experienced, self-motivated software developer</h3>
         <hr />
         <p class="fs-5">
@@ -19,7 +18,12 @@
 @import "../../css/values.scss";
 @use "sass:map";
 
-$imagePaths: map-merge($imagePaths, ("portrait-image": '../../assets/portrait.png'));
+$imagePaths: map-merge(
+  $imagePaths,
+  (
+    "portrait-image": "../../assets/portrait.png",
+  )
+);
 
 @import "../../css/home.scss";
 </style>
