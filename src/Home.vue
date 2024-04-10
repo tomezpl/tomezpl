@@ -23,15 +23,7 @@
           </p>
         </div>
         <div
-          class="
-            mb-3
-            flex-grow-1
-            col-1
-            d-flex
-            flex-column flex-xl-row flex-xl-wrap
-            home-intro-cover-tech
-            align-items-stretch
-          "
+          class="mb-3 flex-grow-1 col-1 d-flex flex-column flex-xl-row flex-xl-wrap home-intro-cover-tech align-items-stretch"
           role="group"
         >
           <ButtonWithPopover
@@ -57,15 +49,7 @@
       </p>
       <div class="d-flex flex-row">
         <div
-          class="
-            mb-3
-            flex-grow-1
-            col-1
-            d-flex
-            flex-column flex-xl-row flex-xl-wrap
-            home-intro-cover-tech
-            align-items-stretch
-          "
+          class="mb-3 flex-grow-1 col-1 d-flex flex-column flex-xl-row flex-xl-wrap home-intro-cover-tech align-items-stretch"
           role="group"
         >
           <ButtonWithPopover
@@ -104,7 +88,12 @@
 @import "./css/values.scss";
 @use "sass:map";
 
-$imagePaths: map-merge($imagePaths, ("portrait-image": './assets/portrait.png'));
+$imagePaths: map-merge(
+  $imagePaths,
+  (
+    "portrait-image": "./assets/portrait.png",
+  )
+);
 @import "./css/home.scss";
 </style>
 
@@ -113,8 +102,8 @@ import { defineComponent } from "vue";
 import ButtonWithPopover from "./components/home/ButtonWithPopover.vue";
 import PortfolioCarousel from "./components/shared/PortfolioCarousel.vue";
 import { ProductSlide } from "./types/ProductSlide";
-import {gameTechExperience} from "./mixins/data/game_tech_experience";
-import {webTechExperience} from "./mixins/data/web_tech_experience";
+import { gameTechExperience } from "./mixins/data/game_tech_experience";
+import { webTechExperience } from "./mixins/data/web_tech_experience";
 
 export default defineComponent({
   components: {
