@@ -13,7 +13,7 @@
       <slot />
   </div>
   <div
-    class="row fixed-top top-0 m-0 navbar-dark tz-blur-behind"
+    class="row fixed-top top-0 m-0 navbar-dark"
     :class="
       Object.fromEntries(
         topBarBorderClass.split(' ').map((c) => [c, scrolledPastSlot])
@@ -22,23 +22,24 @@
     :style="currentTopBarStyle"
     id="topBar"
   >
-    <div class="col-12 navbar p-0 px-4">
+    <div :class="topBarContainerClass()">
       <!-- Sidebar toggler -->
-      <div v-if="!isNavShowing" class="col-3">
+      <div v-if="isNavShowing" class="col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 start-0"></div>
+      <div v-if="!isNavShowing">
         <button
-          class="navbar-toggler ms-1"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-        >
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+      >
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="col-6 text-center">
+      <div class="text-center">
         <!-- Brand logo -->
         <img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" />
       </div>
-      <div class="navbar-brand col-3 me-0 mb-0 py-0">
+      <div class="navbar-brand me-0 mb-0 py-0">
         <div class="py-2">
           <span class="w-100 mx-auto d-block text-center fs-4">
             <!-- If the page passed a page title, render it in the top right. -->
@@ -65,8 +66,6 @@ export default defineComponent({
     navCollapsible?.addEventListener("show.bs.collapse", this.toggleNav);
 
     navCollapsible?.addEventListener("hide.bs.collapse", this.toggleNav);
-
-    console.log("current alpha " + this.bgAlpha);
   },
   methods: {
     toggleNav(ev: Event) {
@@ -90,19 +89,23 @@ export default defineComponent({
 
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     },
-  },
-  computed: {
-    topBarBorderClass() {
-      return "border-2 border-bottom border-lightpink";
-    },
+
+    topBarContainerClass() {
+      return `col-12 d-flex flex-nowrap navbar py-0 pe-4 ${this.isNavShowing ? "" : "ps-4"}`;
+    }
   },
   data() {
     return {
       path: window.location.pathname,
       isNavShowing: false,
-      currentTopBarStyle: { background: "" },
+      currentTopBarStyle: { background: "", "backdrop-filter": "blur(0px)" },
       scrolledPastSlot: false,
     };
+  },
+  computed: {
+    topBarBorderClass() {
+      return "border-2 border-bottom border-lightpink";
+    },
   },
   props: {
     currentPage: {
@@ -115,9 +118,7 @@ export default defineComponent({
     },
   },
   watch: {
-    bgAlpha(current, prev) {
-      console.log("alpha: " + current);
-
+    bgAlpha(current) {
       this.scrolledPastSlot = current >= 1.0;
 
       const styles = {
@@ -127,6 +128,8 @@ export default defineComponent({
         brandGradientTopAlpha: 1,
       };
 
+      this.currentTopBarStyle["backdrop-filter"] = `blur(calc(5px * ${this.bgAlpha}))`;
+
       this.currentTopBarStyle.background = `linear-gradient(0deg, ${this.rgbaFromHex(
         styles.brandGradientBottomColor,
         styles.brandGradientBottomAlpha * this.bgAlpha
@@ -134,9 +137,6 @@ export default defineComponent({
         styles.brandGradientTopColor,
         styles.brandGradientTopAlpha * this.bgAlpha
       )})`;
-      //this.currentTopBarStyle.background = 'red';
-
-      console.log(this.currentTopBarStyle.background);
     },
   },
 });

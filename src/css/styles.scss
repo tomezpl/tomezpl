@@ -38,20 +38,10 @@ $enable-negative-margins: true;
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 
-$utilities: map-merge(
-  $utilities,
-  (
-    "border-color": map-merge(
-        map-get($utilities, "border-color"),
-        (
-            values: map-merge(
-                map-get(map-get($utilities, "border-color"), values),
-                ("lightpink": rgba(tint-color($color-lightrosey, 40%), 0.8))
-            )
-        )
-    )
-  )
-);
+$utilities: map-merge($utilities,
+        ("border-color": map-merge(map-get($utilities, "border-color"),
+                (values: map-merge(map-get(map-get($utilities, "border-color"), values),
+                        ("lightpink": rgba(tint-color($color-lightrosey, 40%), 0.8)))))));
 
 .side-bg {
     background: linear-gradient(to bottom, shade-color($color-purple, 50%), shade-color($color-lightrosey, 90%));
@@ -81,7 +71,7 @@ body {
 }
 
 .tz-brand-border {
-    border-bottom-color: $color-lightrosey!important;
+    border-bottom-color: $color-lightrosey !important;
 }
 
 :export {
@@ -103,28 +93,14 @@ body {
     background-image: linear-gradient(-90deg, rgba(tint-color($color-roseypink, 10%), 0.2), rgba(shade-color($color-purple, 30%), 0.5));
 }
 
-/*.nav, .footer {
-    border-right: 5px solid #00CF58;
+.tz-brand-gradient-sidebar {
+    background-image: linear-gradient(-90deg, shade-color(tint-color($color-roseypink, 10%), 75%), shade-color($color-purple, 70%));
 }
 
-.nav-link.active, .nav-link.active:hover {
-    background-color: #00CF58;
-    color: #1F1F1F;
-}
-
-.nav-link:hover {
-    color: #00CF58;
-}
-
-.body-headernav-border {
-    border-top: 5px solid #00CF58;
-}
-
-.site-body {
-    border-left: 5px solid #00CF58;
-}*/
-
-.blog-post a, .blog-post a:visited, a.green-link, a.green-link:visited {
+.blog-post a,
+.blog-post a:visited,
+a.green-link,
+a.green-link:visited {
     color: #00CF58;
 }
 
@@ -135,7 +111,8 @@ hr.blog-post-separator {
     margin: 0.5em auto;
 }
 
-.blog-post:last-of-type + hr.blog-post-separator, .showcase-entry:last-of-type hr.blog-post-separator {
+.blog-post:last-of-type+hr.blog-post-separator,
+.showcase-entry:last-of-type hr.blog-post-separator {
     display: none;
 }
 
@@ -152,7 +129,3 @@ pre.hlsl-code {
     height: 400px;
     resize: vertical;
 }
-
-/*:root {
-    --bs-light: $color-light;
-}*/

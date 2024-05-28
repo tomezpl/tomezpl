@@ -18,7 +18,7 @@
           <div class="mb-5">
             <ul class="navbar-nav mb-2 mb-md-0">
               <li
-                class="nav-item ps-1 my-md-0 my-1 py-2 ms-2 w-100"
+                class="nav-item ps-1 my-md-0 my-1 py-2 ms-2"
                 v-for="button in routes"
                 :key="button.target"
               >
@@ -126,7 +126,7 @@ export default defineComponent({
       if (this.show === true) {
         classToApply = "tz-navbar-shown";
       }
-      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
+      return `navbar-dark p-0 tz-brand-gradient-sidebar ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
     },
     sideBarContainerClass() {
       const baseClass =
