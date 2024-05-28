@@ -4,98 +4,23 @@
       <div class="d-flex flex-column h-100 pt-5">
         <div class="mb-5">
           <ul class="navbar-nav mb-2 mb-md-0 vertical-navbar-widthfix">
-            <li class="nav-item ps-1 my-md-0 my-1 mt-2 py-2 ms-2">
-              <a
-                :class="getButtonClass('home')"
-                :aria-current="getButtonAriaCurrent('home')"
-                href="index.html"
-                >Home</a
-              >
-              <div
-                class="
-                  btn-tznav-icon
-                  d-inline-block
-                  pe-0
-                  py-auto
-                  align-top
-                  ms-n4
-                  shadow
-                  clearfix
-                "
-              >
-                <i class="bi bi-house float-end"></i>
-              </div>
-            </li>
-            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-              <a
-                :class="getButtonClass('blog')"
-                :aria-current="getButtonAriaCurrent('blog')"
-                href="blog.html"
-                >Blog</a
-              >
-              <div
-                class="
-                  btn-tznav-icon
-                  d-inline-block
-                  pe-0
-                  py-auto
-                  align-top
-                  ms-n4
-                  shadow
-                  clearfix
-                "
-              >
-                <i class="bi bi-journal-bookmark float-end"></i>
-              </div>
-            </li>
-            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-              <a
-                :class="getButtonClass('showcase')"
-                :aria-current="getButtonAriaCurrent('showcase')"
-                href="showcase.html"
-                >Showcase</a
-              >
-              <div
-                class="
-                  btn-tznav-icon
-                  d-inline-block
-                  pe-0
-                  py-auto
-                  align-top
-                  ms-n4
-                  shadow
-                  clearfix
-                "
-              >
-                <i class="bi bi-code float-end"></i>
-              </div>
-            </li>
-            <li class="nav-item ps-1 my-md-0 my-1 py-2 ms-2">
-              <a
-                :class="getButtonClass('about')"
-                :aria-current="getButtonAriaCurrent('about')"
-                href="about.html"
-                >About</a
-              >
-              <div
-                class="
-                  btn-tznav-icon
-                  d-inline-block
-                  pe-0
-                  py-auto
-                  align-top
-                  ms-n4
-                  shadow
-                  clearfix
-                "
-              >
-                <i class="bi bi-person float-end"></i>
-              </div>
+            <li
+              class="nav-item ps-1 my-md-0 my-1 py-2 ms-2"
+              v-for="button in routes"
+              :key="button.target"
+            >
+              <SideBarButton
+                :currentPage="currentPage"
+                :target="button.target"
+                :alias="button.alias"
+                :title="button.title"
+                :icon="button.icon"
+              ></SideBarButton>
             </li>
           </ul>
-        </div>
-        <div class="flex-fill">
-          <div class="h-100 text-center text-light">
+      </div>
+      <div class="flex-fill">
+        <div class="h-100 text-center text-light">
             <div class="h-50"></div>
             <p>Tomasz Zając</p>
             <p class="pb-5">&copy; 2022</p>
@@ -107,11 +32,13 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../css/header.scss';
+@import "../css/header.scss";
 </style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import SideBarButton from "./sidebar/Button.vue";
+import type { SideBarRoute } from "@/types/sidebar-route";
 
 export default defineComponent({
   name: "SideBar",
@@ -121,14 +48,42 @@ export default defineComponent({
       default: "",
     },
     show: {
-        type: Boolean,
-        default: false
-    }
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     path: window.location.pathname,
-    isNavShowing: false
+    isNavShowing: false,
+    routes: new Array<SideBarRoute>(
+      ...[
+        {
+          title: "Home",
+          target: "index",
+          alias: "home",
+          icon: "bi bi-house",
+        },
+        {
+          title: "Blog",
+          target: "blog",
+          icon: "bi bi-journal-bookmark float-end"
+        },
+        {
+          title: "Showcase",
+          target: "showcase",
+          icon: "bi bi-code",
+        },
+        {
+          title: "About",
+          target: "about",
+          icon: "bi bi-person"
+        }
+      ]
+    ),
   }),
+  components: {
+    SideBarButton,
+  },
   methods: {
     getButtonClass(targetPage: string): string {
       const baseClass =
