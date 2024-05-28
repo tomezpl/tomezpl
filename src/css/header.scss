@@ -17,6 +17,7 @@ div.navbar li.nav-item {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
     @include border-radius(0.3rem);
     @include gradient-directional(rgba(tint-color($color-roseypink, 45%), 0.7), rgba(tint-color($color-strongpurple, 10%), 0.7), -150deg);
+
     &:hover {
         @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -150deg);
 
@@ -24,15 +25,13 @@ div.navbar li.nav-item {
     }
 
     &:active,
-    &.active
-    {
+    &.active {
         @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -150deg);
         border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
 
-    &:focus
-    {
+    &:focus {
         border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
@@ -44,7 +43,7 @@ div.navbar li.nav-item {
     text-shadow: 1px 1px 5px rgba(black, 0.35);
 
     font-size: 1.35rem;
-    
+
     height: 3.5rem;
     position: relative;
     z-index: 1022;
@@ -65,22 +64,22 @@ div.navbar li.nav-item {
 }
 
 .tz-navbar-border {
-    border-color: tint-color($color-roseypink, 10%)!important;
+    border-color: tint-color($color-roseypink, 10%) !important;
 }
 
 #navbarContent {
     height: 100vh;
     transition: transform 0.15s ease;
     backdrop-filter: blur(2px);
-    width: 80%;
+    width: 100%;
 }
 
 #navbarContent ul li.nav-item {
     display: inline-block;
 }
 
-.vertical-navbar-widthfix {
-    width: 110%;
+.navbar-toggler {
+    width: fit-content;
 }
 
 .tz-navbar-hidden {
@@ -89,6 +88,10 @@ div.navbar li.nav-item {
 
 .tz-navbar-shown {
     transform: translateX(0%);
+}
+
+.tz-sidebar-container {
+    z-index: 1160;
 }
 
 #topBar {

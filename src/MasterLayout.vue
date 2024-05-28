@@ -1,24 +1,26 @@
 <template>
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 d-flex flex-row">
     <SideBar :show="isSideBarShowing" :currentPage="internalName" />
-    <div ref="header">
-      <Header
-        @set-sidebar-showing="setSidebarShowing"
-        :currentPage="internalName"
-        :bg-alpha="currentAlpha"
+    <div>
+      <div ref="header">
+        <Header
+          @set-sidebar-showing="setSidebarShowing"
+          :currentPage="internalName"
+          :bg-alpha="currentAlpha"
+        >
+          <div ref="headerSlot"><slot name="headerBody" /></div>
+          <template #currentPageTitle>{{ pageTitle }}</template>
+        </Header>
+      </div>
+      <div
+        id="body"
+        ref="body"
+        class="row min-vh-100 side-bg pt-5 tz-brand-border m-0"
       >
-        <div ref="headerSlot"><slot name="headerBody" /></div>
-        <template #currentPageTitle>{{ pageTitle }}</template>
-      </Header>
-    </div>
-    <div
-      id="body"
-      ref="body"
-      class="row min-vh-100 side-bg pt-5 tz-brand-border m-0"
-    >
-      <div class="col-lg-1 d-lg-block d-none" />
-      <div class="col-lg-10 col-md-12 px-0 px-lg-2"><slot></slot></div>
-      <div class="col-lg-1 d-lg-block d-none" />
+        <div class="col-lg-1 d-lg-block d-none" />
+        <div class="col-lg-10 col-md-12 px-0 px-lg-2"><slot></slot></div>
+        <div class="col-lg-1 d-lg-block d-none" />
+      </div>
     </div>
   </div>
 </template>

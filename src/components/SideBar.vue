@@ -1,33 +1,47 @@
 <template>
   <div :class="sideBarContainerClass">
-    <nav :class="navbarContentClasses" id="navbarContent">
-      <div class="d-flex flex-column h-100 pt-5">
-        <div class="mb-5">
-          <ul class="navbar-nav mb-2 mb-md-0 vertical-navbar-widthfix">
-            <li
-              class="nav-item ps-1 my-md-0 my-1 py-2 ms-2"
-              v-for="button in routes"
-              :key="button.target"
-            >
-              <SideBarButton
-                :currentPage="currentPage"
-                :target="button.target"
-                :alias="button.alias"
-                :title="button.title"
-                :icon="button.icon"
-              ></SideBarButton>
-            </li>
-          </ul>
-      </div>
-      <div class="flex-fill">
-        <div class="h-100 text-center text-light">
-            <div class="h-50"></div>
-            <p>Tomasz Zając</p>
-            <p class="pb-5">&copy; {{ currentYear }}</p>
+  <!-- dummy element with the same size as the actual sidebar, just to make the flexbox work -->
+  </div>
+  <div :class="`${sideBarContainerClass} position-fixed`">
+    <div class="position-relative w-100">
+      <nav :class="navbarContentClasses" id="navbarContent">
+        <div class="d-flex flex-column h-100">
+      <!-- Sidebar toggler -->
+        <button
+          class="navbar-toggler ms-4 mt-4 mb-5"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="mb-5">
+            <ul class="navbar-nav mb-2 mb-md-0">
+              <li
+                class="nav-item ps-1 my-md-0 my-1 py-2 ms-2 w-100"
+                v-for="button in routes"
+                :key="button.target"
+              >
+                <SideBarButton
+                  :currentPage="currentPage"
+                  :target="button.target"
+                  :alias="button.alias"
+                  :title="button.title"
+                  :icon="button.icon"
+                ></SideBarButton>
+              </li>
+            </ul>
+        </div>
+        <div class="flex-fill">
+          <div class="h-100 text-center text-light">
+              <div class="h-50"></div>
+              <p>Tomasz Zając</p>
+              <p class="pb-5">&copy; {{ currentYear }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -112,13 +126,13 @@ export default defineComponent({
       if (this.show === true) {
         classToApply = "tz-navbar-shown";
       }
-      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto pt-5`;
+      return `navbar-dark p-0 tz-brand-gradient-sub ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
     },
     sideBarContainerClass() {
       const baseClass =
-        "col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 fixed-top start-0";
+        "col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 start-0 tz-sidebar-container";
       if (this.show !== true) {
-        return `${baseClass} hide`;
+        return `hide w-0`;
       } else {
         return baseClass;
       }

@@ -24,7 +24,7 @@
   >
     <div class="col-12 navbar p-0 px-4">
       <!-- Sidebar toggler -->
-      <div class="col-3">
+      <div v-if="!isNavShowing" class="col-3">
         <button
           class="navbar-toggler ms-1"
           type="button"
