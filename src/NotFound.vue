@@ -5,20 +5,17 @@
             <h1>Woops!</h1>
             <h2>This page doesn't exist. <a href="/" class="green-link">Go home?</a></h2>
         </div>
-        <Footer />
     </div>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
     import Header from './components/Header.vue';
-    import Footer from './components/Footer.vue';
 
     export default defineComponent({
         name: 'NotFound',
         components: {
             Header,
-            Footer
         }
     });
 </script>

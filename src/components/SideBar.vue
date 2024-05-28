@@ -23,7 +23,7 @@
         <div class="h-100 text-center text-light">
             <div class="h-50"></div>
             <p>Tomasz Zając</p>
-            <p class="pb-5">&copy; 2022</p>
+            <p class="pb-5">&copy; {{ currentYear }}</p>
           </div>
         </div>
       </div>
@@ -104,6 +104,9 @@ export default defineComponent({
     },
   },
   computed: {
+    currentYear(): number {
+        return new Date(Date.now()).getFullYear();
+    },
     navbarContentClasses() {
       let classToApply = "tz-navbar-hidden";
       if (this.show === true) {
