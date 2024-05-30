@@ -4,39 +4,58 @@ div.navbar {
     font-family: 'Rajdhani', sans-serif;
 }
 
-div.navbar li.nav-item {
+div.tz-sidebar-container li.nav-item {
     font-size: 1.3rem;
+    // width: 100%;
+
+    &:first-child .btn-tznav {
+        border-top-width: 3px;
+    }
+
+    &:last-child .btn-tznav {
+        border-bottom-width: 3px;
+    }
 }
 
 #tzLogoTopbar {
     height: 4.5em;
     width: auto;
+
 }
 
 .btn-tznav {
     @include button-variant(shade-color($color-lightrosey, 36%), $color-orange);
-    @include border-radius(0.3rem);
-    @include gradient-directional(rgba(tint-color($color-roseypink, 45%), 0.7), rgba(tint-color($color-strongpurple, 10%), 0.7), -150deg);
+    // @include gradient-directional(rgba(tint-color($color-roseypink, 45%), 0.7), rgba(tint-color($color-strongpurple, 10%), 0.7), -150deg);
+    background-color: mix(shade-color(tint-color($color-roseypink, 10%), 75%), shade-color($color-purple, 50%), 20%);
+    border: 1px solid rgba(tint-color($color-roseypink, 30%), 0.3);
+    border-left: none;
+    border-right: none;
 
-    &:hover {
-        @include gradient-directional(tint-color($color-roseypink, 35%), tint-color($color-strongpurple, 40%), -150deg);
+    &:hover:not(.active) {
+        background-color: mix(shade-color(tint-color($color-roseypink, 10%), 65%), shade-color($color-purple, 40%), 70%);
 
-        border: 0.07em solid rgba($color-strongpurple, 0.3);
+        border-color: rgba($color-strongpurple, 0.3);
     }
 
     &:active,
     &.active {
-        @include gradient-directional(tint-color($color-roseypink, 40%), tint-color($color-strongpurple, 50%), -150deg);
-        border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
+        background-color: mix(shade-color(tint-color($color-roseypink, 10%), 45%), shade-color($color-purple, 50%), 80%);
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
 
     &:focus {
-        border: 0.07em solid rgba(tint-color($color-roseypink, 30%), 0.3);
         text-shadow: 1px 1px 5px rgba(black, 0.55);
     }
 
-    width: 8rem;
+    &>div:first-of-type {
+        flex-basis: 100%;
+        flex-shrink: 1;
+        flex-grow: 0;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    width: 100%;
 
     color: rgba($color-light, 0.875);
 
@@ -50,16 +69,17 @@ div.navbar li.nav-item {
 }
 
 .btn-tznav-icon {
-    background-image: linear-gradient(to right, shade-color($color-roseypink, 50%), tint-color($color-roseypink, 20%));
-    height: 3.5rem;
+    height: 100%;
     width: 4rem;
     font-size: 2rem;
-    @include border-radius(0.5rem);
     z-index: 1021;
     color: $light;
 }
 
 .btn-tznav-icon i {
+    position: relative;
+    top: -17.5%;
+
     margin-right: 0.3rem;
 }
 

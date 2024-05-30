@@ -18,7 +18,7 @@
           <div class="mb-5">
             <ul class="navbar-nav mb-2 mb-md-0">
               <li
-                class="nav-item ps-1 my-md-0 my-1 py-2 ms-2"
+                class="nav-item"
                 v-for="button in routes"
                 :key="button.target"
               >

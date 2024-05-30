@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid p-0 d-flex flex-row">
     <SideBar :show="isSideBarShowing" :currentPage="internalName" />
-    <div>
+    <div class="w-100">
       <div ref="header">
         <Header
           @set-sidebar-showing="setSidebarShowing"

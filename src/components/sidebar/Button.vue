@@ -4,13 +4,15 @@
     :aria-current="getButtonAriaCurrent(alias || target)"
     :href="buttonHref"
   >
-    {{ title }}
+    <div>
+      {{ title }}
+    </div>
+    <div
+      class="btn-tznav-icon d-inline-block pe-0 py-auto align-top ms-n4 clearfix"
+    >
+      <i :class="iconClass"></i>
+    </div>
   </a>
-  <div
-    class="btn-tznav-icon d-inline-block pe-0 py-auto align-top ms-n4 shadow clearfix"
-  >
-    <i :class="iconClass"></i>
-  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -55,7 +57,7 @@ export default defineComponent({
   methods: {
     getButtonClass(targetPage: string): string {
       const baseClass =
-        "nav-link btn-tznav text-center fw-bold shadow py-auto px-0 d-inline-block";
+        "nav-link btn-tznav text-center fw-bold shadow py-auto px-0 d-flex flex-row";
 
       if (targetPage === this.currentPage) {
         return `${baseClass} active`;
