@@ -66,23 +66,23 @@ export default defineComponent({
           : null;
 
       const headerSlot =
-        this.$refs.headerSlot !== undefined && this.$refs.headerSlot !== null
+        ('headerBody' in this.$slots ) &&  this.$refs.headerSlot !== undefined && this.$refs.headerSlot !== null
           ? (this.$refs.headerSlot as HTMLElement)
           : null;
   
-      const headerSlotHeight = headerSlot !== null ? headerSlot.offsetHeight : 1;
-      console.log(headerSlotHeight);
+      const headerSlotHeight = headerSlot !== null ? headerSlot.offsetHeight : (header?.offsetTop || 1);
+      // console.log(headerSlotHeight);
       const maxOffset =
         header !== null ? headerSlotHeight : 1;
-      //console.log(`Max offset: ${maxOffset}`);
+      // console.log(`Max offset: ${maxOffset}, ${header?.offsetHeight}, ${headerSlot}`);
 
       return Math.max(0, Math.min(maxOffset, window.scrollY)) / maxOffset;
     },
   },
   mounted() {
     addEventListener("scroll", (ev) => {
-      //console.log(`${window.scrollY} vs ${(this.$refs.body as HTMLElement).offsetTop}`);
-      //console.log(this.getTopBarAlpha());
+      console.log(`${window.scrollY} vs ${(this.$refs.body as HTMLElement).offsetTop}`);
+      console.log(this.getTopBarAlpha());
       this.currentAlpha = this.getTopBarAlpha();
     });
   },
