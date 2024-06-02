@@ -130,9 +130,9 @@ export default defineComponent({
     },
     sideBarContainerClass() {
       const baseClass =
-        "col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 start-0 tz-sidebar-container";
+        "col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2 start-0 tz-sidebar-container";
       if (this.show !== true) {
-        return `hide w-0`;
+        return `w-0`;
       } else {
         return baseClass;
       }
