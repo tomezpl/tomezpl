@@ -66,7 +66,7 @@
           Unreal and Godot, as well as graphics and physics middleware including
           OpenGL, PhysX and Bullet. I am familiar with many math concepts
           commonly used for rendering and lighting (algebra, vector math,
-          calculus), as well as basic Newtonian dynamics required for physics
+          calculus), as well as basic Newtonian mechanics required for physics
           and gameplay programming.
         </p>
       </div>
@@ -130,11 +130,6 @@ export default defineComponent({
   computed: {
     coverPageBlockClass() {
       return "col-12 main-page-content py-4 px-0 px-md-4 home-intro-cover";
-    },
-    portfolioImages(): any {
-      return Object.values(this.portfolio).map(
-        (portfolioEntry: any) => portfolioEntry.img
-      );
     },
   },
 });
