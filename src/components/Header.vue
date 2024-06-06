@@ -35,7 +35,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="text-md-center ms-3 ms-sm-0">
+      <div :class="`text-md-center ms-3 ms-sm-0 ${isNavShowing ? 'align-self-start align-self-sm-center w-100' : 'align-self-center'}`">
         <!-- Brand logo -->
         <img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" />
       </div>
@@ -104,7 +104,7 @@ export default defineComponent({
     },
 
     topBarContainerClass() {
-      return `col-12 d-flex flex-nowrap justify-content-start justify-content-sm-between navbar py-0 pe-4 ${this.isNavShowing ? "" : "ps-4"}`;
+      return `col-12 d-flex flex-nowrap justify-content-sm-between navbar py-0 pe-4 ${this.isNavShowing ? "" : "ps-4"}`;
     },
 
     sidebarTogglerDummyClass() {
