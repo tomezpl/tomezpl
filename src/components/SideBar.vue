@@ -53,6 +53,7 @@
 import { defineComponent } from "vue";
 import SideBarButton from "./sidebar/Button.vue";
 import type { SideBarRoute } from "@/types/sidebar-route";
+import { getNavbarClass } from "@/utils/navbar-style";
 
 export default defineComponent({
   name: "SideBar",
@@ -128,15 +129,9 @@ export default defineComponent({
       }
       return `navbar-dark p-0 tz-brand-gradient-sidebar ${classToApply} border-3 border-end shadow-lg border-lightpink overflow-auto`;
     },
-    sideBarContainerClass() {
-      const baseClass =
-        "col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2 start-0 tz-sidebar-container";
-      if (this.show !== true) {
-        return `w-0`;
-      } else {
-        return baseClass;
-      }
-    },
+    sideBarContainerClass(): string {
+      return getNavbarClass(this.show);
+    }
   },
 });
 </script>

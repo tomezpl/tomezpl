@@ -24,8 +24,8 @@
   >
     <div :class="topBarContainerClass()">
       <!-- Sidebar toggler -->
-      <div v-if="isNavShowing" class="col-8 col-sm-5 col-md-4 col-lg-3 col-xl-3 col-xxl-2 start-0"></div>
-      <div v-if="!isNavShowing">
+      <div v-if="isNavShowing" :class="sidebarTogglerDummyClass()"></div>
+      <div v-if="!isNavShowing" :class="sidebarTogglerDummyClass()">
         <button
         class="navbar-toggler"
         type="button"
@@ -35,13 +35,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="text-center">
+      <div class="text-md-center ms-3 ms-sm-0">
         <!-- Brand logo -->
         <img id="tzLogoTopbar" class="mt-1 mb-2" src="../assets/tz_logo.png" />
       </div>
-      <div class="navbar-brand me-0 mb-0 py-0">
+      <div class="navbar-brand me-0 mb-0 py-0 ms-2 ms-sm-0">
         <div class="py-2">
-          <span class="w-100 mx-auto d-block text-center fs-4">
+          <span class="w-100 mx-auto d-block text-end ms-1 ms-sm-0 fs-4">
             <!-- If the page passed a page title, render it in the top right. -->
             <slot name="currentPageTitle"></slot>
           </span>
@@ -57,10 +57,25 @@
 </style>
 
 <script lang="ts">
+import { getNavbarClass } from "@/utils/navbar-style";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Header",
+  props: {
+    currentPage: {
+      type: String,
+      default: "",
+    },
+    bgAlpha: {
+      type: Number,
+      default: 1,
+    },
+    isNavShowing: {
+      type: Boolean,
+      default: false
+    }
+  },
   mounted() {
     const navCollapsible = document.getElementById("navbarContent");
     navCollapsible?.addEventListener("show.bs.collapse", this.toggleNav);
@@ -73,9 +88,7 @@ export default defineComponent({
         ev.preventDefault();
       }
 
-      this.isNavShowing = !this.isNavShowing;
-
-      this.$emit("setSidebarShowing", this.isNavShowing);
+      this.$emit("setSidebarShowing", !this.isNavShowing);
     },
 
     rgbaFromHex(hex: string, alpha: number): string {
@@ -91,13 +104,16 @@ export default defineComponent({
     },
 
     topBarContainerClass() {
-      return `col-12 d-flex flex-nowrap navbar py-0 pe-4 ${this.isNavShowing ? "" : "ps-4"}`;
-    }
+      return `col-12 d-flex flex-nowrap justify-content-start justify-content-sm-between navbar py-0 pe-4 ${this.isNavShowing ? "" : "ps-4"}`;
+    },
+
+    sidebarTogglerDummyClass() {
+      return getNavbarClass(this.isNavShowing);
+    },
   },
   data() {
     return {
       path: window.location.pathname,
-      isNavShowing: false,
       currentTopBarStyle: { background: "", "backdrop-filter": "blur(0px)" },
       scrolledPastSlot: false,
     };
@@ -105,16 +121,6 @@ export default defineComponent({
   computed: {
     topBarBorderClass() {
       return "border-2 border-bottom border-lightpink";
-    },
-  },
-  props: {
-    currentPage: {
-      type: String,
-      default: "",
-    },
-    bgAlpha: {
-      type: Number,
-      default: 1,
     },
   },
   watch: {

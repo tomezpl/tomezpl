@@ -7,6 +7,7 @@
           @set-sidebar-showing="setSidebarShowing"
           :currentPage="internalName"
           :bg-alpha="currentAlpha"
+          :is-nav-showing="isSideBarShowing"
         >
           <div ref="headerSlot"><slot name="headerBody" /></div>
           <template #currentPageTitle>{{ pageTitle }}</template>
