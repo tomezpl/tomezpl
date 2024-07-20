@@ -7,8 +7,17 @@
         <hr />
         <p class="fs-5">
           4 years of professional experience developing, maintaining and
-          providing support on a variety of enterprise-grade Web services.
+          providing support on a variety of enterprise-grade Web services. Passionate about working on small videogame projects in my free time.
         </p>
+
+        <div class="w-100 mt-5 mb-3 d-flex flex-row justify-content-center social-links-container">
+            <a target="_blank" href="https://github.com/tomezpl">
+              <img src="@/assets//GitHub-Mark-Light-64px.png" />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/tomzajac/">
+              <img src="@/assets/linkedin.png" />
+            </a>
+        </div>
       </div>
     </div>
   </div>
@@ -26,6 +35,7 @@ $imagePaths: map-merge(
 );
 
 @import "../../css/home.scss";
+@import "../../css/cover.scss";
 </style>
 
 <script lang="ts">

@@ -1,0 +1,26 @@
+.social-links-container>a {
+    width: 90px;
+    min-height: 80px;
+
+    border: 1px solid #cfcfcf9f;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.social-links-container>a>img {
+    max-width: 100%;
+    width: auto;
+}
+
+.social-links-container>a:first-of-type {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.social-links-container>a:last-of-type {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
