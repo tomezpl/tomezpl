@@ -75,7 +75,7 @@ export default defineComponent({
   },
   computed: {
     iconClass(): string {
-      return `${this.icon} float-end`;
+      return `${this.icon} float-end pe-3 pe-lg-2 pe-xl-3`;
     },
     buttonHref(): string {
       return this.url || `${this.target}.html`;
