@@ -1,18 +1,41 @@
 .social-links-container>a {
     width: 90px;
     min-height: 80px;
+    aspect-ratio: 1 / 1;
 
     border: 1px solid #cfcfcf9f;
     background: rgba(255, 255, 255, 0.1);
+    transition: ease-in-out 0.4s background;
+    transition: ease-in-out 0.3s backdrop-filter;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: contrast(120%);
+    }
+
+    &:active {
+        backdrop-filter: contrast(105%);
+    }
+
     padding: 8px;
     display: flex;
     flex-flow: row;
     justify-content: center;
+    color: unset;
+
+    :visited {
+        color: unset;
+    }
+
+    :active {
+        color: unset;
+    }
 }
 
 .social-links-container>a>img {
     max-width: 100%;
     width: auto;
+    object-fit: scale-down;
 }
 
 .social-links-container>a:first-of-type {

@@ -14,6 +14,9 @@
             <a target="_blank" href="https://github.com/tomezpl">
               <img src="@/assets//GitHub-Mark-Light-64px.png" />
             </a>
+            <a target="_blank" href="/assets/Tomasz Zając - CV Public.pdf">
+              <i class="bi bi-file-earmark-person-fill" style="font-size: 55px; transform: translate(0, -3px); height: 80px;"></i>
+            </a>
             <a target="_blank" href="https://www.linkedin.com/in/tomzajac/">
               <img src="@/assets/linkedin.png" />
             </a>
